@@ -5,6 +5,10 @@
 @prefix sems: <http://sems.uni-rostock.de/> .
 @prefix mcr: <http://www.manchester.ac.uk/> .
 @prefix rel: <http://purl.org/vocab/relationship> .
+@prefix this: </> .
+
+########
+# people
 
 sems:martin a prov:Agent , prov:Person , foaf:Person ;
 foaf:givenName "Martin" ;
@@ -45,5 +49,23 @@ mcr:stian prov:actedOnBehalfOf mcr:mcr.
 
 sems:martin rel:collaboratesWith mcr:stian .
 sems:dagmar rel:colleagueOf sems:martin .
+
+
+
+######################
+# files and activities
+
+this:initBundle a prov:Activity .
+
+</createbundle.sh> prov:wasGeneratedBy this:initBundle .
+this:initBundle prov:wasAssociatedWith sems:martin .
+</createbundle.sh> prov:wasAttributedTo sems:martin .
+
+
+# this:initBundle prov:qualifiedAssociation [
+# a  prov:Association ;
+# prov:agent    sems:martin ;
+# prov:hadRole  exc:analyst
+# ] .
 
 
