@@ -9,6 +9,8 @@
 sems:martin a prov:Agent , prov:Person , foaf:Person ;
 foaf:givenName "Martin" ;
 foaf:lastName "Scharm" ;
+foaf:familyName "Scharm" ;
+foaf:gender "male" ;
 foaf:jabberID "martin@jabber.lesscomplex.org" , "binfalse@jabber.fsfe.org" ;
 foaf:mbox <mailto:martin@binfalse.de> , <mailto:martin.scharm@uni-rostock.de> ;
 foaf:homepage <http://binfalse.de> .
