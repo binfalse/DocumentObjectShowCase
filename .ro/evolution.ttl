@@ -1,0 +1,47 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sems: <http://sems.uni-rostock.de/> .
+@prefix mcr: <http://www.manchester.ac.uk/> .
+@prefix rel: <http://purl.org/vocab/relationship> .
+
+sems:martin a prov:Agent , prov:Person , foaf:Person ;
+foaf:givenName "Martin" ;
+foaf:lastName "Scharm" ;
+foaf:jabberID "martin@jabber.lesscomplex.org" , "binfalse@jabber.fsfe.org" ;
+foaf:mbox <mailto:martin@binfalse.de> , <mailto:martin.scharm@uni-rostock.de> ;
+foaf:homepage <http://binfalse.de> .
+
+sems:dagmar a prov:Agent , prov:Person , foaf:Person ;
+foaf:givenName "Dagmar" ;
+foaf:lastName "Waltemath" ;
+foaf:mbox <mailto:dagmar.waltemath@uni-rostock.de> ;
+foaf:homepage <http://www.sbi.uni-rostock.de/team/single/dagmar-waltemath/> .
+
+sems:sems a prov:Agent , prov:Organization ;
+foaf:name "SEMS Project";
+foaf:homepage <http://sems.uni-rostock.de> .
+
+sems:unihro a prov:Agent , prov:Organization ;
+foaf:name "University of Rostock" ;
+foaf:homepage <http://www.uni-rostock.de> .
+
+
+mcr:stian a prov:Agent , prov:Person , foaf:Person ;
+foaf:givenName "Stian" ;
+foaf:lastName "Soiland-Reyes" .
+
+mcr:mcr a prov:Agent , prov:Organization ;
+foaf:name "University of Manchester" ;
+foaf:homepage <http://www.manchester.ac.uk/> .
+
+sems:martin prov:actedOnBehalfOf sems:sems .
+sems:dagmar prov:actedOnBehalfOf sems:sems .
+sems:sems prov:actedOnBehalfOf sems:unihro .
+mcr:stian prov:actedOnBehalfOf mcr:mcr.
+
+sems:martin rel:collaboratesWith mcr:stian .
+sems:dagmar rel:colleagueOf sems:martin .
+
+
