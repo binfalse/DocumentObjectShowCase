@@ -5,12 +5,13 @@
 @prefix sems: <http://sems.uni-rostock.de/> .
 @prefix mcr: <http://www.manchester.ac.uk/> .
 @prefix rel: <http://purl.org/vocab/relationship> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix this: </> .
 
 ########
 # people
 
-sems:martin a prov:Agent , prov:Person , foaf:Person ;
+sems:martin a prov:Agent , prov:Person , foaf:Person , dc:Agent ;
 foaf:givenName "Martin" ;
 foaf:lastName "Scharm" ;
 foaf:familyName "Scharm" ;
@@ -55,24 +56,42 @@ sems:dagmar rel:colleagueOf sems:martin .
 ######################
 # files and activities
 
+# general files
+
+</.ro/manifest.json> a prov:Entity ;
+dc:creator sems:martin;
+dc:description "the manifest of the research object" .
+
+</.ro/evolution.ttl> a prov:Entity ;
+dc:creator sems:martin;
+dc:description "file containing the provenance of the research object" .
+
+</> a prov:Entity ;
+dc:creator sems:martin;
+dc:description "the actual research object" .
+
+
+
+
 
 # created the script
 
 this:initBundle a prov:Activity .
 
-</createbundle.sh> prov:wasGeneratedBy this:initBundle .
-this:initBundle prov:wasAssociatedWith sems:martin .
-</createbundle.sh> prov:wasAttributedTo sems:martin .
+</createbundle.sh> a prov:Entity ;
+dc:creator sems:martin;
+prov:wasGeneratedBy this:initBundle ;
+prov:wasAttributedTo sems:martin .
 
+# this:initBundle prov:wasAssociatedWith sems:martin .
+sems:ideaOfAutoBundling a prov:Plan ;
+dc:description "idea of autogenrating an bundle of the git repo" .
 
-
-
-
-# this:initBundle prov:qualifiedAssociation [
-# a  prov:Association ;
-# prov:agent    sems:martin ;
-# prov:hadRole  exc:analyst
-# ] .
+this:initBundle prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   sems:martin ;
+prov:hadPlan sems:ideaOfAutoBundling
+] .
 
 
 
