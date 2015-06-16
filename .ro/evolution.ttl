@@ -55,6 +55,9 @@ sems:dagmar rel:colleagueOf sems:martin .
 ######################
 # files and activities
 
+
+# created the script
+
 this:initBundle a prov:Activity .
 
 </createbundle.sh> prov:wasGeneratedBy this:initBundle .
@@ -62,10 +65,34 @@ this:initBundle prov:wasAssociatedWith sems:martin .
 </createbundle.sh> prov:wasAttributedTo sems:martin .
 
 
+
+
+
 # this:initBundle prov:qualifiedAssociation [
 # a  prov:Association ;
 # prov:agent    sems:martin ;
 # prov:hadRole  exc:analyst
 # ] .
+
+
+
+
+
+
+
+# provenance for the final ro
+
+this:bundleBundle a prov:Activity .
+</> prov:wasGeneratedBy this:bundleBundle .
+</> prov:wasAttributedTo sems:martin .
+this:bundleBundle prov:used </.ro/manifest.json> .
+this:bundleBundle prov:used </.ro/evolution.ttl> .
+this:bundleBundle prov:used </createbundle.sh> .
+
+this:bundleBundle prov:qualifiedUsage [
+a prov:Usage ;
+prov:entity  </createbundle.sh> ;
+prov:hadRole sems:bundlingInstructions 
+] .
 
 
