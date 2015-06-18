@@ -1,2 +1,8 @@
 mimetype
 ro-bundle.zip
+*.tex.backup
+*.bib.backup
+*.out
+*.aux
+*.log
+*.pdf
