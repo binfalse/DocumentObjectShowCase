@@ -6,6 +6,7 @@
 @prefix semspeople: <http://sems.uni-rostock.de/people/#> .
 @prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
 @prefix : <#> .
 @base <app://59020c77-3220-4f90-9dc5-561cf6a04a39/> .
 
@@ -15,9 +16,12 @@
 :martin a prov:Agent , prov:Person , foaf:Person , dc:Agent ;
 prov:alternateOf <http://orcid.org/0000-0003-4519-7030> ;
 prov:alternateOf semspeople:martinscharm ;
+owl:sameAs <http://binfalse.de/about/#me> ;
 foaf:givenName "Martin" ;
 foaf:lastName "Scharm" ;
 foaf:familyName "Scharm" ;
+rdfs:label "Martin Scharm" ;
+foaf:name "Martin Scharm" ;
 foaf:gender "male" ;
 foaf:jabberID "martin@jabber.lesscomplex.org" , "binfalse@jabber.fsfe.org" ;
 foaf:mbox <mailto:martin@binfalse.de> , <mailto:martin.scharm@uni-rostock.de> ;
@@ -40,6 +44,10 @@ foaf:homepage <http://www.uni-rostock.de> .
 
 
 :stian a prov:Agent , prov:Person , foaf:Person ;
+prov:alternateOf <http://orcid.org/0000-0001-9842-9718> ;
+rdfs:label "Stian Soiland-Reyes" ;
+foaf:name "Stian Soiland-Reyes" ;
+owl:sameAs <http://soiland-reyes.com/stian/#me> ;
 foaf:givenName "Stian" ;
 foaf:lastName "Soiland-Reyes" .
 
@@ -64,15 +72,18 @@ sems:sems prov:actedOnBehalfOf sems:university-of-rostock .
 
 </.ro/manifest.json> a prov:Entity ;
 dc:creator :martin;
-dc:description "the manifest of the research object" .
+dc:description "the manifest of the research object" ;
+prov:wasAttributedTo :martin .
 
 </.ro/evolution.ttl> a prov:Entity ;
 dc:creator :martin;
-dc:description "file containing the provenance of the research object" .
+dc:description "file containing the provenance of the research object" ;
+prov:wasAttributedTo :martin .
 
 </> a prov:Entity ;
 dc:creator :martin;
-dc:description "the actual research object" .
+dc:description "the actual research object" ;
+prov:wasAttributedTo :martin .
 
 
 
