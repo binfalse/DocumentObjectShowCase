@@ -153,6 +153,13 @@ dc:creator :martin;
 prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasAttributedTo :martin .
 
+:createbundle-script-v3 a prov:Entity ;
+prov:specialisationOf </createbundle.sh>;
+prov:wasRevisionOf :createbundle-script-v2;
+dc:creator :martin;
+prov:wasGeneratedBy :setupBibtex ;
+prov:wasAttributedTo :martin .
+
 
 
 
@@ -180,6 +187,10 @@ prov:hadPlan :ideaOfTexInfrastructure
 prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
 
 </meta/header.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+</meta/refs.bib> a prov:Entity ;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
@@ -249,6 +260,13 @@ prov:specialisationOf </meta/header.tex>;
 dc:creator :martin;
 prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasGeneratedBy :startingDocument ;
+prov:wasAttributedTo :martin .
+
+
+:bibfile-v1 a prov:Entity ;
+prov:specialisationOf </meta/refs.bib>;
+dc:creator :martin;
+prov:wasGeneratedBy :setupBibtex ;
 prov:wasAttributedTo :martin .
 
 
@@ -342,10 +360,16 @@ prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
 
 
 
+:ideaOfBibtex a prov:Plan ;
+dc:description "need some infrasturcture to reference other people's work" .
 
-
-
-
+:setupBibtex a prov:Activity .
+:setupBibtex prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfBibtex
+];
+.
 
 
 
@@ -405,6 +429,15 @@ prov:hadRole :createTexDocument
 </> prov:wasAttributedTo :martin .
 :bundleBundle prov:used </.ro/manifest.json> .
 :bundleBundle prov:used </.ro/evolution.ttl> .
+:bundleBundle prov:used </document.tex>.
+:bundleBundle prov:used </tex/meth.tex>.
+:bundleBundle prov:used </tex/results.tex>.
+:bundleBundle prov:used </tex/intro.tex>.
+:bundleBundle prov:used </tex/discussion.tex>.
+:bundleBundle prov:used </tex/ack.tex>.
+:bundleBundle prov:used </meta/refs.bib>.
+:bundleBundle prov:used </meta/header.tex>.
+:bundleBundle prov:used </document.pdf>.
 :bundleBundle prov:used </createbundle.sh> .
 
 :bundlingInstructions a prov:Role .
