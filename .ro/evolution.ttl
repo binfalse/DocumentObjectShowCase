@@ -80,6 +80,19 @@ dc:creator :martin;
 dc:description "file containing the provenance of the research object" ;
 prov:wasAttributedTo :martin .
 
+</.ro/evolution.ttl#v1> a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+dc:creator :martin;
+dc:description "first version of provenance file" ;
+prov:wasAttributedTo :martin .
+
+</.ro/evolution.ttl#v2> a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:alternateOf </.ro/evolution.ttl#v1>;
+dc:creator :stian;
+dc:description "second version of provenance file" ;
+prov:wasAttributedTo :stian .
+
 </> a prov:Entity ;
 dc:creator :martin;
 dc:description "the actual research object" ;
@@ -128,10 +141,12 @@ prov:hadPlan :ideaOfAutoBundling
 :bundleBundle prov:used </.ro/evolution.ttl> .
 :bundleBundle prov:used </createbundle.sh> .
 
+:bundlingInstructions a prov:Role .
+
 :bundleBundle prov:qualifiedUsage [
 a prov:Usage ;
 prov:entity  </createbundle.sh> ;
-prov:hadRole sems:bundlingInstructions 
+prov:hadRole :bundlingInstructions 
 ] .
 
 
