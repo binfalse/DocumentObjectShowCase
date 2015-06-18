@@ -188,6 +188,14 @@ prov:wasGeneratedBy :startingDocument ;
 prov:wasAttributedTo :martin .
 
 
+:document-v2 a prov:Entity ;
+prov:specialisationOf </document.tex>;
+prov:alternateOf :document-v1;
+dc:creator :martin;
+prov:wasGeneratedBy :creatingDocStructure ;
+prov:wasAttributedTo :martin .
+
+
 :header-v1 a prov:Entity ;
 prov:specialisationOf </meta/header.tex>;
 dc:creator :martin;
@@ -247,6 +255,24 @@ prov:hadRole :createTexDocument
 
 
 
+
+
+:creatingDocStructure a prov:Activity .
+
+:ideaOfDocStructure a prov:Plan ;
+dc:description "idea of structure of the report" .
+
+:creatingDocStructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfDocStructure
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
 
 
 
