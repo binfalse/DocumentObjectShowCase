@@ -77,8 +77,10 @@ prov:wasAttributedTo :martin .
 
 </.ro/evolution.ttl> a prov:Entity ;
 dc:creator :martin;
+dc:contributor :stian;
 dc:description "file containing the provenance of the research object" ;
-prov:wasAttributedTo :martin .
+prov:wasAttributedTo :martin ;
+prov:wasAttributedTo :stian .
 
 </.ro/evolution.ttl#v1> a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
