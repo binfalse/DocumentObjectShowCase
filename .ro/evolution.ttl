@@ -2,16 +2,19 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix sems: <http://sems.uni-rostock.de/> .
-@prefix mcr: <http://www.manchester.ac.uk/> .
-@prefix rel: <http://purl.org/vocab/relationship> .
+@prefix sems: <http://sems.uni-rostock.de/#> .
+@prefix semspeople: <http://sems.uni-rostock.de/people/#> .
+@prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix this: </> .
+@prefix : <#> .
+@base <app://59020c77-3220-4f90-9dc5-561cf6a04a39/> .
 
 ########
 # people
 
-sems:martin a prov:Agent , prov:Person , foaf:Person , dc:Agent ;
+:martin a prov:Agent , prov:Person , foaf:Person , dc:Agent ;
+prov:alternateOf <http://orcid.org/0000-0003-4519-7030> ;
+prov:alternateOf semspeople:martinscharm ;
 foaf:givenName "Martin" ;
 foaf:lastName "Scharm" ;
 foaf:familyName "Scharm" ;
@@ -20,7 +23,8 @@ foaf:jabberID "martin@jabber.lesscomplex.org" , "binfalse@jabber.fsfe.org" ;
 foaf:mbox <mailto:martin@binfalse.de> , <mailto:martin.scharm@uni-rostock.de> ;
 foaf:homepage <http://binfalse.de> .
 
-sems:dagmar a prov:Agent , prov:Person , foaf:Person ;
+:dagmar a prov:Agent , prov:Person , foaf:Person ;
+prov:alternateOf semspeople:dagmarwaltemath ;
 foaf:givenName "Dagmar" ;
 foaf:lastName "Waltemath" ;
 foaf:mbox <mailto:dagmar.waltemath@uni-rostock.de> ;
@@ -30,26 +34,26 @@ sems:sems a prov:Agent , prov:Organization ;
 foaf:name "SEMS Project";
 foaf:homepage <http://sems.uni-rostock.de> .
 
-sems:unihro a prov:Agent , prov:Organization ;
+sems:university-of-rostock a prov:Agent , prov:Organization ;
 foaf:name "University of Rostock" ;
 foaf:homepage <http://www.uni-rostock.de> .
 
 
-mcr:stian a prov:Agent , prov:Person , foaf:Person ;
+:stian a prov:Agent , prov:Person , foaf:Person ;
 foaf:givenName "Stian" ;
 foaf:lastName "Soiland-Reyes" .
 
-mcr:mcr a prov:Agent , prov:Organization ;
+sems:university-of-manchester a prov:Agent , prov:Organization ;
 foaf:name "University of Manchester" ;
 foaf:homepage <http://www.manchester.ac.uk/> .
 
-sems:martin prov:actedOnBehalfOf sems:sems .
-sems:dagmar prov:actedOnBehalfOf sems:sems .
-sems:sems prov:actedOnBehalfOf sems:unihro .
-mcr:stian prov:actedOnBehalfOf mcr:mcr.
+:martin prov:actedOnBehalfOf sems:sems .
+:dagmar prov:actedOnBehalfOf sems:sems .
+sems:sems prov:actedOnBehalfOf sems:university-of-rostock .
+:stian prov:actedOnBehalfOf sems:university-of-manchester.
 
-sems:martin rel:collaboratesWith mcr:stian .
-sems:dagmar rel:colleagueOf sems:martin .
+:martin rel:collaboratesWith :stian .
+:dagmar rel:colleagueOf :martin .
 
 
 
@@ -59,15 +63,15 @@ sems:dagmar rel:colleagueOf sems:martin .
 # general files
 
 </.ro/manifest.json> a prov:Entity ;
-dc:creator sems:martin;
+dc:creator :martin;
 dc:description "the manifest of the research object" .
 
 </.ro/evolution.ttl> a prov:Entity ;
-dc:creator sems:martin;
+dc:creator :martin;
 dc:description "file containing the provenance of the research object" .
 
 </> a prov:Entity ;
-dc:creator sems:martin;
+dc:creator :martin;
 dc:description "the actual research object" .
 
 
@@ -76,22 +80,27 @@ dc:description "the actual research object" .
 
 # created the script
 
-this:initBundle a prov:Activity .
+:initBundle a prov:Activity .
 
 </createbundle.sh> a prov:Entity ;
-dc:creator sems:martin;
-prov:wasGeneratedBy this:initBundle ;
-prov:wasAttributedTo sems:martin .
+dc:creator :martin;
+prov:wasGeneratedBy :initBundle ;
+prov:wasAttributedTo :martin .
 
-# this:initBundle prov:wasAssociatedWith sems:martin .
-sems:ideaOfAutoBundling a prov:Plan ;
+:ideaOfAutoBundling a prov:Plan ;
 dc:description "idea of autogenrating an bundle of the git repo" .
 
-this:initBundle prov:qualifiedAssociation [
+:initBundle prov:qualifiedAssociation [
 a prov:Association ;
-prov:agent   sems:martin ;
-prov:hadPlan sems:ideaOfAutoBundling
+prov:agent   :martin ;
+prov:hadPlan :ideaOfAutoBundling
 ] .
+
+
+
+
+
+# created tex infrastructure
 
 
 
@@ -101,14 +110,14 @@ prov:hadPlan sems:ideaOfAutoBundling
 
 # provenance for the final ro
 
-this:bundleBundle a prov:Activity .
-</> prov:wasGeneratedBy this:bundleBundle .
-</> prov:wasAttributedTo sems:martin .
-this:bundleBundle prov:used </.ro/manifest.json> .
-this:bundleBundle prov:used </.ro/evolution.ttl> .
-this:bundleBundle prov:used </createbundle.sh> .
+:bundleBundle a prov:Activity .
+</> prov:wasGeneratedBy :bundleBundle .
+</> prov:wasAttributedTo :martin .
+:bundleBundle prov:used </.ro/manifest.json> .
+:bundleBundle prov:used </.ro/evolution.ttl> .
+:bundleBundle prov:used </createbundle.sh> .
 
-this:bundleBundle prov:qualifiedUsage [
+:bundleBundle prov:qualifiedUsage [
 a prov:Usage ;
 prov:entity  </createbundle.sh> ;
 prov:hadRole sems:bundlingInstructions 
