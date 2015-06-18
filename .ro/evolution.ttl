@@ -7,6 +7,7 @@
 @prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix pav:  <http://purl.org/pav/>.
 @prefix : <#> .
 @base <app://59020c77-3220-4f90-9dc5-561cf6a04a39/> .
 
@@ -14,8 +15,8 @@
 # people
 
 :martin a prov:Agent , prov:Person , foaf:Person , dc:Agent ;
-prov:alternateOf <http://orcid.org/0000-0003-4519-7030> ;
-prov:alternateOf semspeople:martinscharm ;
+prov:wasRevisionOf <http://orcid.org/0000-0003-4519-7030> ;
+prov:wasRevisionOf semspeople:martinscharm ;
 owl:sameAs <http://binfalse.de/about/#me> ;
 foaf:givenName "Martin" ;
 foaf:lastName "Scharm" ;
@@ -28,7 +29,7 @@ foaf:mbox <mailto:martin@binfalse.de> , <mailto:martin.scharm@uni-rostock.de> ;
 foaf:homepage <http://binfalse.de> .
 
 :dagmar a prov:Agent , prov:Person , foaf:Person ;
-prov:alternateOf semspeople:dagmarwaltemath ;
+prov:wasRevisionOf semspeople:dagmarwaltemath ;
 foaf:givenName "Dagmar" ;
 foaf:lastName "Waltemath" ;
 foaf:mbox <mailto:dagmar.waltemath@uni-rostock.de> ;
@@ -44,7 +45,7 @@ foaf:homepage <http://www.uni-rostock.de> .
 
 
 :stian a prov:Agent , prov:Person , foaf:Person ;
-prov:alternateOf <http://orcid.org/0000-0001-9842-9718> ;
+prov:wasRevisionOf <http://orcid.org/0000-0001-9842-9718> ;
 rdfs:label "Stian Soiland-Reyes" ;
 foaf:name "Stian Soiland-Reyes" ;
 owl:sameAs <http://soiland-reyes.com/stian/#me> ;
@@ -92,9 +93,23 @@ prov:wasAttributedTo :martin .
 
 :evolution-v2 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
-prov:alternateOf :evolution-v1;
+prov:wasRevisionOf :evolution-v1;
 dc:creator :stian;
 dc:description "second version of provenance file" ;
+prov:wasAttributedTo :stian .
+
+:evolution-v3 a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:wasRevisionOf :evolution-v2;
+dc:creator :martin;
+dc:description "third version of provenance file" ;
+prov:wasAttributedTo :martin .
+
+:evolution-v4 a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:wasRevisionOf :evolution-v3;
+dc:creator :stian;
+dc:description "fourth version of provenance file" ;
 prov:wasAttributedTo :stian .
 
 </> a prov:Entity ;
@@ -133,7 +148,7 @@ prov:wasAttributedTo :martin .
 
 :createbundle-script-v2 a prov:Entity ;
 prov:specialisationOf </createbundle.sh>;
-prov:alternateOf :createbundle-script-v1;
+prov:wasRevisionOf :createbundle-script-v1;
 dc:creator :martin;
 prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasAttributedTo :martin .
@@ -215,7 +230,7 @@ prov:wasAttributedTo :martin .
 
 :document-v2 a prov:Entity ;
 prov:specialisationOf </document.tex>;
-prov:alternateOf :document-v1;
+prov:wasRevisionOf :document-v1;
 dc:creator :martin;
 prov:wasGeneratedBy :creatingDocStructure ;
 prov:wasAttributedTo :martin .
@@ -223,7 +238,7 @@ prov:wasAttributedTo :martin .
 
 :document-v3 a prov:Entity ;
 prov:specialisationOf </document.tex>;
-prov:alternateOf :document-v2;
+prov:wasRevisionOf :document-v2;
 dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
@@ -279,14 +294,14 @@ prov:wasAttributedTo :martin .
 
 :editor a prov:SoftwareAgent;
 foaf:name "Kile"^^xsd:string;
-# how to store the version number of the software?
+pav:version "2.1.3";
 .
 
 :createTexDocument a prov:Role .
 
 :pdflatex a prov:SoftwareAgent;
 foaf:name "pdfTex"^^xsd:string;
-# how to store the version number of the software?
+pav:version "1.40.15";
 .
 
 :translateTexDocument a prov:Role .
