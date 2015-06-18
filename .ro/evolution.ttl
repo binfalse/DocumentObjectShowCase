@@ -174,6 +174,31 @@ dc:creator :martin;
 prov:wasAttributedTo :martin .
 
 
+</tex/ack.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</tex/intro.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</tex/results.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</tex/discussion.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</tex/meth.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
 </document.pdf> a prov:Entity ;
 dc:creator :martin;
 prov:wasGeneratedBy :translatingDocument ;
@@ -196,12 +221,58 @@ prov:wasGeneratedBy :creatingDocStructure ;
 prov:wasAttributedTo :martin .
 
 
+:document-v3 a prov:Entity ;
+prov:specialisationOf </document.tex>;
+prov:alternateOf :document-v2;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
 :header-v1 a prov:Entity ;
 prov:specialisationOf </meta/header.tex>;
 dc:creator :martin;
 prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasGeneratedBy :startingDocument ;
 prov:wasAttributedTo :martin .
+
+
+
+
+:ack-v1 a prov:Entity ;
+prov:specialisationOf </tex/ack.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
+:discussion-v1 a prov:Entity ;
+prov:specialisationOf </tex/discussion.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
+:intro-v1 a prov:Entity ;
+prov:specialisationOf </tex/intro.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
+:results-v1 a prov:Entity ;
+prov:specialisationOf </tex/results.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
+:meth-v1 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :improveTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
 
 
 
@@ -228,6 +299,37 @@ prov:hadRole :translateTexDocument
 ];
 .
 :translatingDocument prov:used </document.tex> .
+
+
+
+
+
+:improveTexInfrastructure a prov:Activity .
+:improveTexInfrastructure prov:used :document-v2 .
+
+:ideaOfCleanerTexInfrastructure a prov:Plan ;
+dc:description "idea of a much cleaner latex setup to write the tex report" .
+
+:improveTexInfrastructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfCleanerTexInfrastructure
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+:improveTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29"^^xsd:dateTime ;
+prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
+
+
+
+
+
+
 
 
 
