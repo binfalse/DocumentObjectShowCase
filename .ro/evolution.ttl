@@ -82,15 +82,17 @@ dc:description "file containing the provenance of the research object" ;
 prov:wasAttributedTo :martin ;
 prov:wasAttributedTo :stian .
 
-</.ro/evolution.ttl#v1> a prov:Entity ;
+
+
+:evolution-v1 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
 dc:creator :martin;
 dc:description "first version of provenance file" ;
 prov:wasAttributedTo :martin .
 
-</.ro/evolution.ttl#v2> a prov:Entity ;
+:evolution-v2 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
-prov:alternateOf </.ro/evolution.ttl#v1>;
+prov:alternateOf :evolution-v1;
 dc:creator :stian;
 dc:description "second version of provenance file" ;
 prov:wasAttributedTo :stian .
@@ -110,7 +112,6 @@ prov:wasAttributedTo :martin .
 
 </createbundle.sh> a prov:Entity ;
 dc:creator :martin;
-prov:wasGeneratedBy :initBundle ;
 prov:wasAttributedTo :martin .
 
 :ideaOfAutoBundling a prov:Plan ;
@@ -122,11 +123,131 @@ prov:agent   :martin ;
 prov:hadPlan :ideaOfAutoBundling
 ] .
 
+# versions of that script
+
+:createbundle-script-v1 a prov:Entity ;
+prov:specialisationOf </createbundle.sh>;
+dc:creator :martin;
+prov:wasGeneratedBy :initBundle ;
+prov:wasAttributedTo :martin .
+
+:createbundle-script-v2 a prov:Entity ;
+prov:specialisationOf </createbundle.sh>;
+prov:alternateOf :createbundle-script-v1;
+dc:creator :martin;
+prov:wasGeneratedBy :initTexInfrastructure ;
+prov:wasAttributedTo :martin .
+
+
+
+
+
+
+
 
 
 
 
 # created tex infrastructure
+
+:initTexInfrastructure a prov:Activity .
+
+:ideaOfTexInfrastructure a prov:Plan ;
+dc:description "idea of a latex setup to write the tex report" .
+
+:initTexInfrastructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfTexInfrastructure
+] .
+
+:initTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29"^^xsd:dateTime ;
+prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
+
+</meta/header.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</document.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</document.pdf> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :translatingDocument ;
+prov:wasAttributedTo :martin .
+
+
+:document-v1 a prov:Entity ;
+prov:specialisationOf </document.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :initTexInfrastructure ;
+prov:wasGeneratedBy :startingDocument ;
+prov:wasAttributedTo :martin .
+
+
+:header-v1 a prov:Entity ;
+prov:specialisationOf </meta/header.tex>;
+dc:creator :martin;
+prov:wasGeneratedBy :initTexInfrastructure ;
+prov:wasGeneratedBy :startingDocument ;
+prov:wasAttributedTo :martin .
+
+
+
+
+:editor a prov:SoftwareAgent;
+foaf:name "Kile"^^xsd:string;
+# how to store the version number of the software?
+.
+
+:createTexDocument a prov:Role .
+
+:pdflatex a prov:SoftwareAgent;
+foaf:name "pdfTex"^^xsd:string;
+# how to store the version number of the software?
+.
+
+:translateTexDocument a prov:Role .
+
+:translatingDocument a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :pdflatex ;
+prov:hadRole :translateTexDocument
+];
+.
+:translatingDocument prov:used </document.tex> .
+
+
+
+
+
+
+# writing
+
+:startingDocument a prov:Activity .
+
+:ideaOfWritingTheReport a prov:Plan ;
+dc:description "idea of a report to document the fully featured combine archive" .
+
+:startingDocument prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfWritingTheReport
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+
+
+
 
 
 
