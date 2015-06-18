@@ -1,9 +1,40 @@
 
 \section{Methods}
 
+The development of the fully featured COMBINE archive can be divided into three major parts.
+I first decided for a simulation study to encode in an archive, then I created an initial archive which was then enriched with information I found on the internet and data that I generated on my own.
+These steps are described in the following.
+
 \subsection{Deciding for a Simulation Study}
-criteria?
-what kind of study is that?
+
+I developed 3 criteria to decide for a simulation study:
+
+\paragraph{Criteria 1: Open Access.}
+As I want to share the demo archive openly, I had to decide for an experiment that offers as much open data as possible.
+Obviously and unfortunately, the publication, as an essential document for the documentation of experiments, is the bottleneck.
+Therefore, I needed to find a simulation experiment which was published using an open access license.
+
+\paragraph{Criteria 2: Much data already available in standard formats.}
+As I did not want to encoded the model myself, I restricted my search to studies which are already available as SBML and CellML models.
+Ideally, these models are already curated, which increases my trust in the encoding.
+
+\paragraph{Criteria 3: I have ideally already dealt with that publication.}
+As I will need to work with the study I need to understand it.
+It usually takes a lot of time to dig into a new field, so I preferred studies that I already investigated.
+However, this was just a soft criteria to decrease my workload.
+
+
+\paragraph{Searching for a matching study.}
+Searching for a study was harder than I thought.
+I failed to encoded my search criteria for the search engines of current databases.
+I ended up asking a common search engine to look for names of open access journals at the websites of the databases and eventually \texttt{site:models.cellml.org "Molecular Systems Biology"}\footnote{\href{https://duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}{duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}} resulted in a model that is available from the CellML model repository (Calzone, Thieffry, Tyson, Novak, 2007\footnote{\href{http://models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}{models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}}) \cite{cellmlrepo} and from the Biomodels Database (BIOMD0000000144\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}}) \cite{biomodels}.
+
+
+\paragraph{The final study.}
+The study I chose was published by Calzone \emph{et.~al.} in Molecular systems biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos \cite{Calzone2007}.
+In an earlier study dealing with the cell cycle I already touched that publication, so it was the perfect study for the demo archive project.
+
+
 
 
 \subsection{Creating an initial COMBINE archive}
