@@ -6,3 +6,5 @@ ro-bundle.zip
 *.aux
 *.log
 *.pdf
+*.bbl
+*.blg

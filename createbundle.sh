@@ -14,7 +14,7 @@ echo -n application/vnd.wf4ever.robundle+zip > mimetype
 zip -q -0 "$BUNDLENAME" mimetype
 
 # add all other files with the default compression
-zip -q -r "$BUNDLENAME" . -x mimetype "$BUNDLENAME" .git\* \*.tex.backup \*.bib.backup \*.out \*.aux \*.log
+zip -q -r "$BUNDLENAME" . -x mimetype "$BUNDLENAME" .git\* \*.tex.backup \*.bib.backup \*.out \*.aux \*.log \*.bbl \*.blg
 
 # finally list the contents of the bundle
 echo " ------------------------------------------- "
