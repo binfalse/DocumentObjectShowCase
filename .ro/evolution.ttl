@@ -293,6 +293,18 @@ prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
 
 
+:intro-v2 a prov:Entity ;
+prov:specialisationOf </tex/intro.tex>;
+prov:wasRevisionOf :intro-v1;
+prov:wasInfluencedBy <http://dx.doi.org/10.1186/s12859-014-0369-z>;
+prov:wasInfluencedBy <http://dx.doi.org/10.7287/peerj.preprints.792v1>;
+prov:wasInfluencedBy <http://dx.doi.org/10.7287/peerj.preprints.639v1>;
+prov:wasInfluencedBy <http://dx.doi.org/10.7287/peerj.preprints.514v1>;
+dc:creator :martin;
+prov:wasGeneratedBy :draftingIntro ;
+prov:wasAttributedTo :martin .
+
+
 :results-v1 a prov:Entity ;
 prov:specialisationOf </tex/results.tex>;
 dc:creator :martin;
@@ -334,7 +346,16 @@ prov:hadRole :translateTexDocument
 :translatingDocument prov:used </document.tex> .
 
 
+:ideaOfAnIntroduction a prov:Plan ;
+dc:description "my initial idea of an introduction" .
 
+:draftingIntro a prov:Activity;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfAnIntroduction
+];
+.
 
 
 :improveTexInfrastructure a prov:Activity .
