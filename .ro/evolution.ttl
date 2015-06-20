@@ -164,6 +164,72 @@ prov:wasAttributedTo :martin .
 
 
 
+# images
+
+
+</img/webcat-screenshot-1.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :takeScreenshotsOfWebcat ;
+prov:wasAttributedTo :martin .
+
+</img/webcat-screenshot-2.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :takeScreenshotsOfWebcat ;
+prov:wasAttributedTo :martin .
+
+</img/webcat-screenshot-combined.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :combineAndShrinkWebcatScreenshots ;
+prov:wasDerivedFrom </img/webcat-screenshot-1.png>;
+prov:wasDerivedFrom </img/webcat-screenshot-2.png>;
+prov:wasAttributedTo :martin .
+
+:ideaOfIncludingWebcatScreenshots a prov:Plan ;
+dc:description "i should include a screenshot of the webcat project" .
+
+:ideaOfDecreasingTheSpaceOfScreenshot a prov:Plan ;
+dc:description "the screenshot shouldn't take too much space" .
+
+:takeScreenshotsOfWebcat a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingWebcatScreenshots
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :screenshottool ;
+prov:hadRole :createScreenshot
+];
+.
+
+:createScreenshot a prov:Role .
+:imageProcessing a prov:Role .
+
+:screenshottool a prov:SoftwareAgent;
+foaf:name "xfce4-screenshooter"^^xsd:string;
+pav:version "1.8.2";
+.
+
+:gimp a prov:SoftwareAgent;
+foaf:name "gimp"^^xsd:string;
+pav:version "2.8.14";
+.
+
+:combineAndShrinkWebcatScreenshots a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfDecreasingTheSpaceOfScreenshot
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :gimp ;
+prov:hadRole :imageProcessing
+];
+prov:used </img/webcat-screenshot-1.png>;
+prov:used </img/webcat-screenshot-2.png>;
+.
 
 
 
@@ -320,6 +386,14 @@ prov:wasAttributedTo :martin .
 
 
 
+:meth-v2 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v1;
+dc:creator :martin;
+prov:wasGeneratedBy :includeWebcatScreenshotInMethodsSection ;
+prov:wasAttributedTo :martin .
+
+
 
 
 :editor a prov:SoftwareAgent;
@@ -355,6 +429,7 @@ a prov:Association ;
 prov:agent   :martin ;
 prov:hadPlan :ideaOfAnIntroduction
 ];
+prov:used :intro-v1;
 .
 
 
@@ -391,6 +466,23 @@ prov:agent   :martin ;
 prov:hadPlan :ideaOfBibtex
 ];
 .
+
+
+:includeWebcatScreenshotInMethodsSection prov:used </img/webcat-screenshot-combined.png>.
+:includeWebcatScreenshotInMethodsSection prov:used :meth-v1.
+:includeWebcatScreenshotInMethodsSection a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingWebcatScreenshots
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
 
 
 

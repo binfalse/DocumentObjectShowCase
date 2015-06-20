@@ -14,8 +14,8 @@ However, a simulation study usually consists of multiple files, the very model m
 Transferring research results, thus, remained a challenge.
 
 To close this gap, the COMBINE community developed the COMBINE archive, a single file that aggregates all the information necessary for a modelling and simulation experiment in biology \cite{Bergmann2014}.
-The basis of the COMBINE archive is the Open Modeling EXchange format (OMEX), which bundles all the files that belong to an experiment.
-Enriched with meta data, simulation experiments can reproducibly encoded in COMBINE archives.
+The skeleton of a COMBINE archive consists of a manifest and a meta data file, specified by the Open Modeling EXchange format (OMEX).
+Bundled in a zip container, simulation experiments can reproducibly encoded in COMBINE archives.
 
 To demonstrate the capabilities of a COMBINE archive I created a demo archive, which is available from our GitHub project\footnote{\href{https://github.com/SemsProject/CombineArchiveShowCase}{github.com/SemsProject/CombineArchiveShowCase}}.
 In the following I describe what I did to build that archive.
