@@ -81,21 +81,16 @@ The first chapter of extending the archive dealt with a search for resources rel
 \paragraph{The article} is usually the central object of a research study. As I said earlier, Calzone \emph{et.~al.} published their findings in Molecular Systems Biology. So I went to the corresponding website\footnote{\href{http://msb.embopress.org/content/3/1/131}{msb.embopress.org/content/3/1/131}} and downloaded the article and supplementary information.
 As both describe the experiment, I uploaded the files to the documentation directory in the CombineArchiveWeb application.
 The web interface decently added meta data listing me as the creator of the file, which, unfortunately, is in this case incorrect.
-Thus, I modified the entry to attribute the real creators.
-Additionally, I also added modification dates to the meta data of these files by copying them from the website of the article and the meta data of the PDF.
+Thus, I modified the entries to attribute the real creators and to state when and where the files where downloaded.
+Additionally, I added modification dates to the meta data of these files by copying them from the website of the article and the meta data of the PDF files.
 The CombineArchiveWeb application provides a nice interface to modify the meta data without knowledge about XML or RDF.
-However, in the background it created a RDF/XML tree to describe the main article and added it to the meta data file of the archive, see section~\ref{sec:rdfmeta}.
+However, in the background it of course created a RDF/XML tree to describe the main article in a machine readable format, see section~\ref{sec:rdfmeta}.
+This XML subtree was then added to the meta data file of the archive.
 
 
+\paragraph{The model in SBML format} was already available from the Biomodels Database, so I went there to retrieve the file \texttt{BIOMD0000000144.xml}\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} (SBML level 2 version 1).
+The model files was then also uploaded to the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, as stated on the Biomodels Database website and in the model document.
 
-download
-supp
-upload
-recreated meta data
-
-
-seek for more information on that model
-and add that to the archive
 
 \subsubsection{Generating more Data}
 creating simulation description
