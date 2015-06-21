@@ -27,6 +27,131 @@
 			"name":    "Martin Scharm"
 		},
 		"createdOn": "2015-06-16T13:22:58Z"
+	},
+	{
+		"uri":      "/document.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-18T15:42:25+0100"
+	},
+	{
+		"uri":      "/document.pdf",
+		"mediatype": "application/pdf",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		}
+	},
+	{
+		"uri":      "/img/webcat-screenshot-1.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-19T09:29:20+0100"
+	},
+	{
+		"uri":      "/img/webcat-screenshot-2.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-19T09:29:23+0100"
+	},
+	{
+		"uri":      "/img/webcat-screenshot-combined.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-19T09:47:48+0100"
+	},
+	{
+		"uri":      "/meta/refs.bib",
+		"mediatype": "text/plain",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/meta/header.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/minted.sty",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/discussion.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/ack.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/appendix.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/intro.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/results.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
+	},
+	{
+		"uri":      "/tex/meth.tex",
+		"mediatype": "text/x-tex",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": ""
 	}
 	]
 }

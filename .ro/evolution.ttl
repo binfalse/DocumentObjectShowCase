@@ -66,6 +66,318 @@ sems:sems prov:actedOnBehalfOf sems:university-of-rostock .
 
 
 
+
+
+
+
+# writing
+
+:startingDocument a prov:Activity .
+
+:ideaOfWritingTheReport a prov:Plan ;
+dc:description "idea of a report to document the fully featured combine archive" .
+
+:startingDocument prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfWritingTheReport
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+
+
+
+
+:creatingDocStructure a prov:Activity .
+
+:ideaOfDocStructure a prov:Plan ;
+dc:description "idea of structure of the report" .
+
+:creatingDocStructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfDocStructure
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+
+
+
+
+
+
+
+
+# created tex infrastructure
+
+:initTexInfrastructure a prov:Activity .
+
+:ideaOfTexInfrastructure a prov:Plan ;
+dc:description "idea of a latex setup to write the tex report" .
+
+:initTexInfrastructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfTexInfrastructure
+] .
+
+:initTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29"^^xsd:dateTime ;
+prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
+
+
+
+
+
+# intro
+
+:ideaOfAnIntroduction a prov:Plan ;
+dc:description "my initial idea of an introduction" .
+
+:draftingIntro a prov:Activity;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfAnIntroduction
+];
+prov:used :intro-v1;
+.
+
+
+
+
+
+# split tex files
+
+:improveTexInfrastructure a prov:Activity .
+:improveTexInfrastructure prov:used :document-v2 .
+
+:ideaOfCleanerTexInfrastructure a prov:Plan ;
+dc:description "idea of a much cleaner latex setup to write the tex report" .
+
+:improveTexInfrastructure prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfCleanerTexInfrastructure
+];
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+:improveTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29Z"^^xsd:dateTime ;
+prov:endedAtTime   "2015-06-18T15:40:22Z"^^xsd:dateTime .
+
+
+
+
+
+# create bibtex files
+
+:ideaOfBibtex a prov:Plan ;
+dc:description "need some infrasturcture to reference other people's work" .
+
+:setupBibtex a prov:Activity .
+:setupBibtex prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfBibtex
+];
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# translate document
+
+
+:translatingDocument a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :pdflatex ;
+prov:hadRole :translateTexDocument
+];
+prov:used </document.tex>;
+prov:used </tex/meth.tex>;
+prov:used </tex/results.tex>;
+prov:used </tex/intro.tex>;
+prov:used </tex/discussion.tex>;
+prov:used </tex/ack.tex>;
+prov:used </tex/appendix.tex>;
+prov:used </minted.sty>;
+prov:used </meta/refs.bib>;
+prov:used </meta/header.tex>;
+prov:used </document.tex> .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# add screenshot
+
+:includeWebcatScreenshotInMethodsSection prov:used </img/webcat-screenshot-combined.png>.
+:includeWebcatScreenshotInMethodsSection prov:used :meth-v1.
+:includeWebcatScreenshotInMethodsSection a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingWebcatScreenshots
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+.
+
+
+
+:ideaOfIncludingWebcatScreenshots a prov:Plan ;
+dc:description "i should include a screenshot of the webcat project"
+.
+
+
+
+
+:takeScreenshotsOfWebcat a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingWebcatScreenshots
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :screenshottool ;
+prov:hadRole :createScreenshot
+];
+.
+
+
+:takeScreenshotsOfWebcat
+prov:startedAtTime "2015-06-19T08:29:20Z"^^xsd:dateTime ;
+prov:endedAtTime   "2015-06-19T08:29:23Z"^^xsd:dateTime .
+
+
+:ideaOfDecreasingTheSpaceOfScreenshot a prov:Plan ;
+dc:description "the screenshot shouldn't take too much space" .
+
+:combineAndShrinkWebcatScreenshots a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfDecreasingTheSpaceOfScreenshot
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :gimp ;
+prov:hadRole :imageProcessing
+];
+prov:used </img/webcat-screenshot-1.png>;
+prov:used </img/webcat-screenshot-2.png>;
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# action
+
+:ideaOfShowingExampleCode a prov:Plan ;
+dc:description "i could include example code" .
+
+:inlcudeSourceExamples a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfShowingExampleCode
+] ;
+prov:used :meth-v2;
+.
+:meth-v3 prov:wasGeneratedBy :inlcudeSourceExamples ;
+.
+
+
+
+
+
+
+
+
+
+# action
+
+:includeCodeInNiceEnv a prov:Plan ;
+dc:description "could should be layouted nicely" .
+
+:downloadLatestVersionOfMinted a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :includeCodeInNiceEnv
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :wget ;
+prov:hadRole :download
+];
+.
+</minted.sty> prov:wasGeneratedBy :downloadLatestVersionOfMinted ;
+.
+
+
+
+
+
 ######################
 # files and activities
 
@@ -121,6 +433,19 @@ prov:wasAttributedTo :martin .
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 # created the script
 
 :initBundle a prov:Activity .
@@ -137,6 +462,7 @@ a prov:Association ;
 prov:agent   :martin ;
 prov:hadPlan :ideaOfAutoBundling
 ] .
+
 
 # versions of that script
 
@@ -164,6 +490,13 @@ prov:wasAttributedTo :martin .
 
 
 
+
+
+
+
+
+
+
 # images
 
 
@@ -184,73 +517,11 @@ prov:wasDerivedFrom </img/webcat-screenshot-1.png>;
 prov:wasDerivedFrom </img/webcat-screenshot-2.png>;
 prov:wasAttributedTo :martin .
 
-:ideaOfIncludingWebcatScreenshots a prov:Plan ;
-dc:description "i should include a screenshot of the webcat project" .
-
-:ideaOfDecreasingTheSpaceOfScreenshot a prov:Plan ;
-dc:description "the screenshot shouldn't take too much space" .
-
-:takeScreenshotsOfWebcat a prov:Activity ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfIncludingWebcatScreenshots
-] ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :screenshottool ;
-prov:hadRole :createScreenshot
-];
-.
-
-:createScreenshot a prov:Role .
-:imageProcessing a prov:Role .
-
-:screenshottool a prov:SoftwareAgent;
-foaf:name "xfce4-screenshooter"^^xsd:string;
-pav:version "1.8.2";
-.
-
-:gimp a prov:SoftwareAgent;
-foaf:name "gimp"^^xsd:string;
-pav:version "2.8.14";
-.
-
-:combineAndShrinkWebcatScreenshots a prov:Activity ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfDecreasingTheSpaceOfScreenshot
-] ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :gimp ;
-prov:hadRole :imageProcessing
-];
-prov:used </img/webcat-screenshot-1.png>;
-prov:used </img/webcat-screenshot-2.png>;
-.
 
 
 
 
 
-
-# created tex infrastructure
-
-:initTexInfrastructure a prov:Activity .
-
-:ideaOfTexInfrastructure a prov:Plan ;
-dc:description "idea of a latex setup to write the tex report" .
-
-:initTexInfrastructure prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfTexInfrastructure
-] .
-
-:initTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29"^^xsd:dateTime ;
-prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
 
 </meta/header.tex> a prov:Entity ;
 dc:creator :martin;
@@ -287,6 +558,11 @@ prov:wasAttributedTo :martin .
 
 
 </tex/meth.tex> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</tex/appendix.tex> a prov:Entity ;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
@@ -394,140 +670,25 @@ prov:wasGeneratedBy :includeWebcatScreenshotInMethodsSection ;
 prov:wasAttributedTo :martin .
 
 
+:meth-v3 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v2;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
 
 
-:editor a prov:SoftwareAgent;
-foaf:name "Kile"^^xsd:string;
-pav:version "2.1.3";
+:meth-v1 a prov:Entity ;
+prov:specialisationOf </tex/appendix.tex>;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+
+</minted.sty> a prov:Entity ;
+pav:retrievedFrom <https://raw.githubusercontent.com/gpoore/minted/master/source/minted.sty>;
+pav:retrievedBy :martin;
+pav:retrievedOn "2015-06-21T11:54:21+01:00"^^xsd:dateTime;
 .
-
-:createTexDocument a prov:Role .
-
-:pdflatex a prov:SoftwareAgent;
-foaf:name "pdfTex"^^xsd:string;
-pav:version "1.40.15";
-.
-
-:translateTexDocument a prov:Role .
-
-:translatingDocument a prov:Activity ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :pdflatex ;
-prov:hadRole :translateTexDocument
-];
-.
-:translatingDocument prov:used </document.tex> .
-
-
-:ideaOfAnIntroduction a prov:Plan ;
-dc:description "my initial idea of an introduction" .
-
-:draftingIntro a prov:Activity;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfAnIntroduction
-];
-prov:used :intro-v1;
-.
-
-
-:improveTexInfrastructure a prov:Activity .
-:improveTexInfrastructure prov:used :document-v2 .
-
-:ideaOfCleanerTexInfrastructure a prov:Plan ;
-dc:description "idea of a much cleaner latex setup to write the tex report" .
-
-:improveTexInfrastructure prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfCleanerTexInfrastructure
-];
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :editor ;
-prov:hadRole :createTexDocument
-];
-.
-
-:improveTexInfrastructure prov:startedAtTime "2015-06-18T11:41:29"^^xsd:dateTime ;
-prov:endedAtTime   "2015-06-18T15:40:22"^^xsd:dateTime .
-
-
-
-:ideaOfBibtex a prov:Plan ;
-dc:description "need some infrasturcture to reference other people's work" .
-
-:setupBibtex a prov:Activity .
-:setupBibtex prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfBibtex
-];
-.
-
-
-:includeWebcatScreenshotInMethodsSection prov:used </img/webcat-screenshot-combined.png>.
-:includeWebcatScreenshotInMethodsSection prov:used :meth-v1.
-:includeWebcatScreenshotInMethodsSection a prov:Activity ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfIncludingWebcatScreenshots
-] ;
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :editor ;
-prov:hadRole :createTexDocument
-];
-.
-
-
-
-
-
-
-# writing
-
-:startingDocument a prov:Activity .
-
-:ideaOfWritingTheReport a prov:Plan ;
-dc:description "idea of a report to document the fully featured combine archive" .
-
-:startingDocument prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfWritingTheReport
-];
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :editor ;
-prov:hadRole :createTexDocument
-];
-.
-
-
-
-
-
-:creatingDocStructure a prov:Activity .
-
-:ideaOfDocStructure a prov:Plan ;
-dc:description "idea of structure of the report" .
-
-:creatingDocStructure prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :martin ;
-prov:hadPlan :ideaOfDocStructure
-];
-prov:qualifiedAssociation [
-a prov:Association ;
-prov:agent   :editor ;
-prov:hadRole :createTexDocument
-];
-.
-
 
 
 
@@ -548,6 +709,8 @@ prov:hadRole :createTexDocument
 :bundleBundle prov:used </tex/intro.tex>.
 :bundleBundle prov:used </tex/discussion.tex>.
 :bundleBundle prov:used </tex/ack.tex>.
+:bundleBundle prov:used </tex/appendix.tex>.
+:bundleBundle prov:used </minted.sty>.
 :bundleBundle prov:used </meta/refs.bib>.
 :bundleBundle prov:used </meta/header.tex>.
 :bundleBundle prov:used </document.pdf>.
@@ -560,5 +723,55 @@ a prov:Usage ;
 prov:entity  </createbundle.sh> ;
 prov:hadRole :bundlingInstructions 
 ] .
+
+
+
+:createScreenshot a prov:Role .
+
+:screenshottool a prov:SoftwareAgent;
+foaf:name "xfce4-screenshooter"^^xsd:string;
+pav:version "1.8.2";
+.
+
+
+
+
+:imageProcessing a prov:Role .
+
+:gimp a prov:SoftwareAgent;
+foaf:name "GNU Image Manipulation Program"^^xsd:string;
+pav:version "2.8.14";
+.
+
+
+
+
+:createTexDocument a prov:Role .
+
+:editor a prov:SoftwareAgent;
+foaf:name "Kile"^^xsd:string;
+pav:version "2.1.3";
+.
+
+
+
+
+:translateTexDocument a prov:Role .
+
+:pdflatex a prov:SoftwareAgent;
+foaf:name "pdfTex"^^xsd:string;
+pav:version "pdfTeX 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian)";
+.
+
+
+
+
+:download a prov:Role .
+
+:wget a prov:SoftwareAgent;
+foaf:name "wet"^^xsd:string;
+pav:version "GNU Wget 1.16.3 built on linux-gnu.";
+.
+
 
 

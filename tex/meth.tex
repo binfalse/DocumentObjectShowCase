@@ -31,7 +31,7 @@ I ended up asking a common search engine to look for names of open access journa
 
 
 \paragraph{The final study.}
-The study I chose was published by Calzone \emph{et.~al.} in Molecular systems biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos \cite{Calzone2007}.
+The study I chose was published by Calzone \emph{et.~al.} in Molecular Systems Biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos \cite{Calzone2007}.
 In an earlier study dealing with the cell cycle I already touched that publication, so it was the perfect study for the demo archive project.
 
 
@@ -72,9 +72,28 @@ To organize the files I developed a structure containing the following directori
  \item \texttt{result/}: files that result from running the experiment
 \end{itemize}
 
-
+Using the CombineArchiveWeb application it was very easy to get rid of the unrelated \texttt{.DS\_Store} file. In the web interface I also moved all other files into the model directory, as they all encoded the mode.
+The other directories are to be filled in the next sections.
 
 \subsubsection{Retrieving Data and Information from other Services}
+The first chapter of extending the archive dealt with a search for resources related to this study on the internet.
+
+\paragraph{The article} is usually the central object of a research study. As I said earlier, Calzone \emph{et.~al.} published their findings in Molecular Systems Biology. So I went to the corresponding website\footnote{\href{http://msb.embopress.org/content/3/1/131}{msb.embopress.org/content/3/1/131}} and downloaded the article and supplementary information.
+As both describe the experiment, I uploaded the files to the documentation directory in the CombineArchiveWeb application.
+The web interface decently added meta data listing me as the creator of the file, which, unfortunately, is in this case incorrect.
+Thus, I modified the entry to attribute the real creators.
+Additionally, I also added modification dates to the meta data of these files by copying them from the website of the article and the meta data of the PDF.
+The CombineArchiveWeb application provides a nice interface to modify the meta data without knowledge about XML or RDF.
+However, in the background it created a RDF/XML tree to describe the main article and added it to the meta data file of the archive, see section~\ref{sec:rdfmeta}.
+
+
+
+download
+supp
+upload
+recreated meta data
+
+
 seek for more information on that model
 and add that to the archive
 
