@@ -88,15 +88,27 @@ However, in the background it of course created a RDF/XML tree to describe the m
 This XML subtree was then added to the meta data file of the archive.
 
 
-\paragraph{The model in SBML format} was already available from the Biomodels Database, so I went there to retrieve the file \texttt{BIOMD0000000144.xml}\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} (SBML level 2 version 1).
-The model files was then also uploaded to the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, as stated on the Biomodels Database website and in the model document.
+\paragraph{The model} encoded in SBML format was already available from the Biomodels Database, so I went there to retrieve the file \texttt{BIOMD0000000144.xml}\footnote{\href{http://www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}} (SBML level 2 version 1).
+The model file was then also uploaded to the \texttt{model/} in the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, according to the Biomodels Database website\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} and as stated in the model document.
 
 
 \subsubsection{Generating more Data}
+The model files and the journal article are obviously not sufficient to reproduce the experiment's results, but I did not find any other information on the internet.
+Thus, I generated more data myself.
+
+\paragraph{The simulation description} is essential to run the experiment.
+It defines the environment and the output of the \textit{in silico} execution.
+Creating an initial simulation description was easy using the SED-ML Web Tools\footnote{\href{http://bqfbergmann.dyndns.org/SED-ML_Web_Tools}{bqfbergmann.dyndns.org/SED-ML\_Web\_Tools}} (SWT).
+I just needed to upload the model and a ticking some boxes and the SWT created an initial SED-ML script which runs a time course simulation on the model and produces a graph for the concentration of every and the value of every parameter.
+
+
 creating simulation description
+
+\paragraph{The simulation results}
 simulating it
 storing results
 
+\paragraph{The visualisation} of the model can be encoded in a standard format
 generating sbgn compliant figure
 
 

@@ -76,62 +76,8 @@ backgroundcolor = mintedbg
 }
 
 
-\renewcommand{\theFancyVerbLine}{\sffamily
-\color{hellgrau}{\scriptsize\tt{\arabic{FancyVerbLine}}}}
-
-
-% \BeforeBeginEnvironment{minted}{\begin{mdframed}[style=mddefault,frametitle={Inhomogeneous}]}
-% \AfterEndEnvironment{minted}{\end{mdframed}}
-
-% \usepackage{listings}
-% \definecolor{lightgray}{rgb}{.9,.9,.9}
-% \definecolor{darkgray}{rgb}{.4,.4,.4}
-% \definecolor{forestGreen}{RGB}{34,139,34}
-% \definecolor{orangeRed}{RGB}{255,69,0}
-% \lstdefinestyle{codeStyle}{
-% language=xml,
-% %Formatting
-% basicstyle=\tiny,
-% sensitive=true,
-% showstringspaces=false,
-% numbers=left,
-% numberstyle=\tiny,
-% tabsize=2,
-% numbersep=3pt,
-% extendedchars=true,
-% xleftmargin=2em,
-% lineskip=1pt,
-% breaklines,
-% captionpos=t,
-% %Coloring
-% backgroundcolor=\color{lightgray},
-% morekeywords={BooleanExpression},
-% alsoletter={:,,/,?},
-% morestring=[b]{"},
-% morecomment=[s]{&lt;!--}{--&gt;},keywordstyle=\color{forestGreen},
-% identifierstyle=\color{blue}\ttfamily,
-% stringstyle=\color{orangeRed}\ttfamily,
-% commentstyle=\color{forestGreen}\ttfamily
-% }
-% 
-% \lstdefinelanguage{xml}{
-% basicstyle=\tiny,
-% sensitive=false,
-% }
-% 
-% \lstnewenvironment{mycode}[2]{
-% \lstset{caption=#1,label=#2,style=codeStyle}
-% }{}
-
-% \newenvironment{mycode}[2]
-% {
-% \begin{mdframed}[style=mddefault,frametitle={test}]
-% \begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt]{xml}
-% }
-% {
-% \end{minted}
-% \end{mdframed}
-% }
+\renewcommand{\theFancyVerbLine}{
+\color{hellgrau}{\scriptsize\texttt{\arabic{FancyVerbLine}}}}
 
 
 
