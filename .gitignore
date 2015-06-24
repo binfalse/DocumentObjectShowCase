@@ -8,3 +8,4 @@ ro-bundle.zip
 *.pdf
 *.bbl
 *.blg
+_minted-document/
