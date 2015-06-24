@@ -79,7 +79,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T18:11:10+0100"
 	},
 	{
 		"uri":      "/meta/header.tex",
@@ -88,7 +88,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T15:42:25+0100"
 	},
 	{
 		"uri":      "/minted.sty",
@@ -97,7 +97,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-21T13:37:20+0100"
 	},
 	{
 		"uri":      "/tex/discussion.tex",
@@ -106,7 +106,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T16:21:20+0100"
 	},
 	{
 		"uri":      "/tex/ack.tex",
@@ -115,7 +115,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T16:21:20+0100"
 	},
 	{
 		"uri":      "/tex/appendix.tex",
@@ -124,7 +124,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-21T13:37:20+0100"
 	},
 	{
 		"uri":      "/tex/intro.tex",
@@ -133,7 +133,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T16:21:20+0100"
 	},
 	{
 		"uri":      "/tex/results.tex",
@@ -142,7 +142,7 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
+		"createdOn": "2015-06-18T16:21:20+0100"
 	},
 	{
 		"uri":      "/tex/meth.tex",
@@ -151,7 +151,79 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": ""
-	}
+		"createdOn": "2015-06-18T16:21:20+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-bottom-COPASI.pdf",
+		"mediatype": "application/pdf",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:44:27+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-bottom-COPASI.svg",
+		"mediatype": "image/svg+xml",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:04:55+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-bottom-webtools.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:04:55+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-top-COPASI.pdf",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:44:38+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-top-COPASI.svg",
+		"mediatype": "image/svg+xml",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:04:55+0100"
+	},
+	{
+		"uri":      "/img/Fig1B-top-webtools.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:04:55+0100"
+	},
+	{
+		"uri":      "/img/Figure1B-publication.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:03:05+0100"
+	},
+	{
+		"uri":      "/img/Figure1B-publication-trimmed.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-06-24T12:03:38+0100"
+	},
 	]
 }

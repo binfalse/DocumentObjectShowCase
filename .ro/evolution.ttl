@@ -341,9 +341,8 @@ a prov:Association ;
 prov:agent   :martin ;
 prov:hadPlan :ideaOfShowingExampleCode
 ] ;
-prov:used :meth-v2;
 .
-:meth-v3 prov:wasGeneratedBy :inlcudeSourceExamples ;
+:appendix-v1 prov:wasGeneratedBy :inlcudeSourceExamples ;
 .
 
 
@@ -373,6 +372,183 @@ prov:hadRole :download
 .
 </minted.sty> prov:wasGeneratedBy :downloadLatestVersionOfMinted ;
 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# include comparison of resulting figures
+
+
+:ideaOfComparingResultingFigures a prov:Plan ;
+dc:description "include figures to compare results of publication, swt, and copasi" .
+
+
+
+:ideaOfIncludingScreenshotOfFigInPublication a prov:Plan ;
+dc:description "include screenshot of publication for comparison" .
+
+
+:createScreenshotOfFigInPublication a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingScreenshotOfFigInPublication
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :screenshottool ;
+prov:hadRole :createScreenshot
+];
+prov:used <https://github.com/SemsProject/CombineArchiveShowCase/raw/2e946ce1adfd05d16350c30176e29546301603a2/documentation/Calzone2007.pdf>;
+.
+
+</img/Figure1B-publication.png> prov:wasGeneratedBy :createScreenshotOfFigInPublication ;
+prov:wasDerivedFrom <https://github.com/SemsProject/CombineArchiveShowCase/raw/2e946ce1adfd05d16350c30176e29546301603a2/documentation/Calzone2007.pdf>;
+.
+
+
+
+:ideaOfCroppingScreenshotOfFigInPublication a prov:Plan ;
+dc:description "crop the screenshot of publication" .
+
+
+:cropScreenshotOfPublication a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfCroppingScreenshotOfFigInPublication
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :mogrify ;
+prov:hadRole :cropImage
+];
+prov:used </img/Figure1B-publication.png> ;
+.
+</img/Figure1B-publication-trimmed.png> prov:wasGeneratedBy :cropScreenshotOfPublication ;
+prov:wasDerivedFrom </img/Figure1B-publication.png>;
+.
+
+
+
+
+
+
+
+
+:ideaOfDownloadingResultsFromShowcase a prov:Plan ;
+dc:description "download the results from the showcase" .
+
+:downloadImagesFromShowcase a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfDownloadingResultsFromShowcase
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :wget ;
+prov:hadRole :download
+];
+.
+</img/Fig1B-top-webtools.png> prov:wasGeneratedBy :downloadImagesFromShowcase ;
+pav:retrievedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-top-webtools.png>;
+.
+</img/Fig1B-bottom-webtools.png> prov:wasGeneratedBy :downloadImagesFromShowcase ;
+pav:retrievedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-bottom-webtools.png>;
+.
+</img/Fig1B-top-COPASI.svg> prov:wasGeneratedBy :downloadImagesFromShowcase ;
+pav:retrievedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-top-COPASI.svg>;
+.
+</img/Fig1B-bottom-COPASI.svg> prov:wasGeneratedBy :downloadImagesFromShowcase ;
+pav:retrievedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-bottom-COPASI.svg>;
+.
+
+
+
+
+
+
+:ideaOfConvertingSvgToPdf a prov:Plan ;
+dc:description "svg cannot be used by pdflatex, we need pdfs" .
+
+
+:convertCopasiTopImagesToPdf a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfConvertingSvgToPdf
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :rsvg ;
+prov:hadRole :convertSvgToPdf
+];
+prov:used </img/Fig1B-top-COPASI.svg>;
+.
+</img/Fig1B-top-COPASI.pdf> prov:wasGeneratedBy :convertCopasiTopImagesToPdf ;
+prov:wasDerivedFrom </img/Fig1B-top-COPASI.svg>;
+.
+
+
+
+
+:convertCopasiBottomToPdf a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfConvertingSvgToPdf
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :rsvg ;
+prov:hadRole :convertSvgToPdf
+];
+prov:used </img/Fig1B-bottom-COPASI.svg>;
+.
+</img/Fig1B-bottom-COPASI.pdf> prov:wasGeneratedBy :convertCopasiBottomToPdf ;
+prov:wasDerivedFrom </img/Fig1B-bottom-COPASI.svg>;
+.
+
+
+
+
+:addComparisonFigureToMethodsSection a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfComparingResultingFigures
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :meth-v3;
+prov:used </img/Figure1B-publication-trimmed.png>;
+prov:used </img/Fig1B-top-webtools.png>;
+prov:used </img/Fig1B-bottom-webtools.png>;
+prov:used </img/Fig1B-top-COPASI.pdf>;
+prov:used </img/Fig1B-bottom-COPASI.pdf>;
+.
+:meth-v4 prov:wasGeneratedBy :addComparisonFigureToMethodsSection ;
+.
+
 
 
 
@@ -516,6 +692,68 @@ prov:wasGeneratedBy :combineAndShrinkWebcatScreenshots ;
 prov:wasDerivedFrom </img/webcat-screenshot-1.png>;
 prov:wasDerivedFrom </img/webcat-screenshot-2.png>;
 prov:wasAttributedTo :martin .
+
+
+
+
+
+
+
+
+</img/Figure1B-publication.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</img/Figure1B-publication-trimmed.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+
+
+</img/Fig1B-top-webtools.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</img/Fig1B-bottom-webtools.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+
+
+
+</img/Fig1B-top-COPASI.svg> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</img/Fig1B-top-COPASI.pdf> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</img/Fig1B-bottom-COPASI.svg> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+</img/Fig1B-bottom-COPASI.pdf> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -677,7 +915,14 @@ dc:creator :martin;
 prov:wasAttributedTo :martin .
 
 
-:meth-v1 a prov:Entity ;
+:meth-v4 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v3;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+:appendix-v1 a prov:Entity ;
 prov:specialisationOf </tex/appendix.tex>;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
@@ -689,6 +934,18 @@ pav:retrievedFrom <https://raw.githubusercontent.com/gpoore/minted/master/source
 pav:retrievedBy :martin;
 pav:retrievedOn "2015-06-21T11:54:21+01:00"^^xsd:dateTime;
 .
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -773,5 +1030,23 @@ foaf:name "wet"^^xsd:string;
 pav:version "GNU Wget 1.16.3 built on linux-gnu.";
 .
 
+
+
+
+:cropImage a prov:Role .
+
+:mogrify a prov:SoftwareAgent;
+foaf:name "mogrify"^^xsd:string;
+pav:version "ImageMagick 6.8.9-9 Q16 x86_64 2015-01-05";
+.
+
+
+
+:convertSvgToPdf a prov:Role .
+
+:rsvg a prov:SoftwareAgent;
+foaf:name "rsvg-convert"^^xsd:string;
+pav:version "2.40.9";
+.
 
 

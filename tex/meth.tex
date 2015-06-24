@@ -43,7 +43,7 @@ In an earlier study dealing with the cell cycle I already touched that publicati
 \begin{center}
 \includegraphics[width=.8\textwidth]{img/webcat-screenshot-combined.png}
 \end{center}
-\caption{The CombineArchiveWeb application showing the archive as it was exported from M2CAT. The files were cloned from the CellML model repository and immediately annotated with meta data. Thus, it is clear that I am not the creator of \textit{calzone\_2007.png}, instead it lists Catherine Lloyd as the creators and .}
+\caption{The CombineArchiveWeb application showing the archive as it was exported from M2CAT. The files were cloned from the CellML model repository and immediately annotated with meta data. Thus, it is clear that I am not the creator of \textit{calzone\_2007.png}, instead it lists Catherine Lloyd as the creators and tells you when it was developed.}
 \label{fig:screen:webcat}
 \end{figure}
 
@@ -79,7 +79,7 @@ The other directories are to be filled in the next sections.
 The first chapter of extending the archive dealt with a search for resources related to this study on the internet.
 
 \paragraph{The article} is usually the central object of a research study. As I said earlier, Calzone \emph{et.~al.} published their findings in Molecular Systems Biology. So I went to the corresponding website\footnote{\href{http://msb.embopress.org/content/3/1/131}{msb.embopress.org/content/3/1/131}} and downloaded the article and supplementary information.
-As both describe the experiment, I uploaded the files to the documentation directory in the CombineArchiveWeb application.
+As both describe the experiment, I uploaded the files to the \texttt{documentation/} directory in the CombineArchiveWeb application.
 The web interface decently added meta data listing me as the creator of the file, which, unfortunately, is in this case incorrect.
 Thus, I modified the entries to attribute the real creators and to state when and where the files where downloaded.
 Additionally, I added modification dates to the meta data of these files by copying them from the website of the article and the meta data of the PDF files.
@@ -89,24 +89,63 @@ This XML subtree was then added to the meta data file of the archive.
 
 
 \paragraph{The model} encoded in SBML format was already available from the Biomodels Database, so I went there to retrieve the file \texttt{BIOMD0000000144.xml}\footnote{\href{http://www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}} (SBML level 2 version 1).
-The model file was then also uploaded to the \texttt{model/} in the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, according to the Biomodels Database website\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} and as stated in the model document.
+The model file was then also uploaded to the \texttt{model/} directory in the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, according to the Biomodels Database website\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} and as stated in the model document.
 
 
 \subsubsection{Generating more Data}
-The model files and the journal article are obviously not sufficient to reproduce the experiment's results, but I did not find any other information on the internet.
+The model files and the journal article are obviously not sufficient to reproduce the experiment's results.
+However, I was not able to find any other information on the internet.
 Thus, I generated more data myself.
 
 \paragraph{The simulation description} is essential to run the experiment.
 It defines the environment and the output of the \textit{in silico} execution.
 Creating an initial simulation description was easy using the SED-ML Web Tools\footnote{\href{http://bqfbergmann.dyndns.org/SED-ML_Web_Tools}{bqfbergmann.dyndns.org/SED-ML\_Web\_Tools}} (SWT).
-I just needed to upload the model and a ticking some boxes and the SWT created an initial SED-ML script which runs a time course simulation on the model and produces a graph for the concentration of every and the value of every parameter.
+I just needed to upload the model and to tick some boxes and the SWT created an initial SED-ML script which runs a time course simulation on the model.
+In the end it produces a graph for the concentration of every species and the value of every parameter and combines everything in a large table.
+So I ended up with 66 plots and a huge table.
+I compared the graphs with those in the paper and sensed a match.
+That's a good start and I uploaded the SED-ML \texttt{Calzone2007-simulation-all-figures.xml} script to the \texttt{experiment/} directory in the CombineArchiveWeb application.
+
+To explicitly prove that the simulation setup reproduces the results described in \cite{Calzone2007} I developed another SED-ML script \texttt{Calzone2007-simulation-figure-1B.xml} which generates the Figure~1B of the publication.
+This script was developed using the \textit{Edit Script} functionality of the SWT based on the initially generated script and produces both graphs shown on the right-hand side of Figure~1B in \texttt{documentation/Calzone2007.pdf}.
+Finally, it was also uploaded to the \texttt{experiment/} directory in the CombineArchiveWeb application.
 
 
-creating simulation description
 
-\paragraph{The simulation results}
-simulating it
-storing results
+
+\begin{figure}
+\begin{center}
+\subfigure[Figure~1B of the Publication]{
+\includegraphics[width=.31\textwidth]{img/Figure1B-publication-trimmed.png}
+\label{fig:sim:results:pub}
+}
+\subfigure[SED-ML Web Tools]{
+\begin{minipage}[b]{.25\textwidth}
+\includegraphics[width=\textwidth]{img/Fig1B-top-webtools.png}\\
+\includegraphics[width=\textwidth]{img/Fig1B-bottom-webtools.png}
+\end{minipage}
+\label{fig:sim:results:swt}
+}
+\subfigure[COPASI]{
+\begin{minipage}[b]{.36\textwidth}
+\includegraphics[width=\textwidth]{img/Fig1B-top-COPASI.pdf}\\
+\includegraphics[width=\textwidth]{img/Fig1B-bottom-COPASI.pdf}
+\end{minipage}
+\label{fig:sim:results:COPASI}
+}
+\end{center}
+\caption{Comparison of the figures shown in the publication (\ref{fig:sim:results:pub}) with the figures generated by the SWT (\ref{fig:sim:results:swt}) and COPASI (\ref{fig:sim:results:COPASI}) using the SED-ML script \texttt{Calzone2007-simulation-figure-1B.xml}. The results described in the publication could be reproduced.}
+\label{fig:sim:results}
+\end{figure}
+
+\paragraph{The simulation results} show the effect of running the model under the environment defined in the simulation description.
+I ran the experiment defined in \texttt{Calzone2007-simulation-figure-1B.xml} at the SWT and using the stand-alone software program COPASI~\cite{copasi}.
+The plots generated by both tools prove that the developed \textit{in silico} experiment reproduce the figure shown in the publication, cmp. Figure~\ref{fig:sim:results}.
+The SWT, see Figure~\ref{fig:sim:results:swt}, as well as COPASI, see Figure~\ref{fig:sim:results:COPASI}, were able to reproduce Figure~1B of the publication, see Figure~\ref{fig:sim:results:pub}.
+
+The figures produced by the SWT and COPASI were uploaded to the \texttt{result/} directory in the CombineArchiveWeb application and meta data were added accordingly.
+
+
 
 \paragraph{The visualisation} of the model can be encoded in a standard format
 generating sbgn compliant figure
