@@ -93,11 +93,12 @@
 	{
 		"uri":      "/minted.sty",
 		"mediatype": "text/x-tex",
-		"createdBy":
+		"retrievedFrom": "https://raw.githubusercontent.com/gpoore/minted/master/source/minted.sty",
+		"retrievedOn": "2015-06-21T13:37:20+0100",
+		"retrievedBy":
 		{
 			"name":    "Martin Scharm"
-		},
-		"createdOn": "2015-06-21T13:37:20+0100"
+		}
 	},
 	{
 		"uri":      "/tex/discussion.tex",
@@ -169,7 +170,12 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": "2015-06-24T12:04:55+0100"
+		"retrievedFrom": "https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-bottom-COPASI.svg",
+		"retrievedOn": "2015-06-24T12:04:55+0100",
+		"retrievedBy":
+		{
+			"name":    "Martin Scharm"
+		}
 	},
 	{
 		"uri":      "/img/Fig1B-bottom-webtools.png",
@@ -178,7 +184,12 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": "2015-06-24T12:04:55+0100"
+		"retrievedFrom": "https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-bottom-webtools.png",
+		"retrievedOn": "2015-06-24T12:04:55+0100",
+		"retrievedBy":
+		{
+			"name":    "Martin Scharm"
+		}
 	},
 	{
 		"uri":      "/img/Fig1B-top-COPASI.pdf",
@@ -196,7 +207,12 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": "2015-06-24T12:04:55+0100"
+		"retrievedFrom": "https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-top-COPASI.svg",
+		"retrievedOn": "2015-06-24T12:04:55+0100",
+		"retrievedBy":
+		{
+			"name":    "Martin Scharm"
+		}
 	},
 	{
 		"uri":      "/img/Fig1B-top-webtools.png",
@@ -205,7 +221,12 @@
 		{
 			"name":    "Martin Scharm"
 		},
-		"createdOn": "2015-06-24T12:04:55+0100"
+		"retrievedFrom": "https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/result/Fig1B-top-webtools.png",
+		"retrievedOn": "2015-06-24T12:04:55+0100",
+		"retrievedBy":
+		{
+			"name":    "Martin Scharm"
+		}
 	},
 	{
 		"uri":      "/img/Figure1B-publication.png",
@@ -225,5 +246,19 @@
 		},
 		"createdOn": "2015-06-24T12:03:38+0100"
 	},
+	{
+		"uri":      "/img/Calzone2007.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"retrievedFrom": "https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/model/sbgn/Calzone2007.png",
+		"retrievedOn": "2015-06-24T14:23:47+0100",
+		"retrievedBy":
+		{
+			"name":    "Martin Scharm"
+		}
+	}
 	]
 }

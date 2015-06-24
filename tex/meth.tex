@@ -27,11 +27,11 @@ However, this was just a soft criteria to decrease my workload.
 \paragraph{Searching for a matching study.}
 Searching for a study was harder than I thought.
 I failed to encoded my search criteria for the search engines of current databases.
-I ended up asking a common search engine to look for names of open access journals at the websites of the databases and eventually \texttt{site:models.cellml.org "Molecular Systems Biology"}\footnote{\href{https://duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}{duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}} resulted in a model that is available from the CellML model repository (Calzone, Thieffry, Tyson, Novak, 2007\footnote{\href{http://models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}{models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}}) \cite{cellmlrepo} and from the Biomodels Database (BIOMD0000000144\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}}) \cite{biomodels}.
+I ended up asking a common search engine to look for names of open access journals at the websites of the databases and eventually \texttt{site:models.cellml.org "Molecular Systems Biology"}\footnote{\href{https://duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}{duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}} resulted in a model that is available from the CellML model repository (Calzone, Thieffry, Tyson, Novak, 2007\footnote{\href{http://models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}{models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}})~\cite{cellmlrepo} and from the Biomodels Database (BIOMD0000000144\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}})~\cite{biomodels}.
 
 
 \paragraph{The final study.}
-The study I chose was published by Calzone \emph{et.~al.} in Molecular Systems Biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos \cite{Calzone2007}.
+The study I chose was published by Calzone \emph{et.~al.} in Molecular Systems Biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos~\cite{Calzone2007}.
 In an earlier study dealing with the cell cycle I already touched that publication, so it was the perfect study for the demo archive project.
 
 
@@ -47,11 +47,11 @@ In an earlier study dealing with the cell cycle I already touched that publicati
 \label{fig:screen:webcat}
 \end{figure}
 
-I created an initial version of the COMBINE archive using M2CAT \cite{m2cat}.
-The webinterface as \href{http://m2cat.sems.uni-rostock.de/}{m2cat.sems.uni-rostock.de} searches in a graph database to retrieve links to models published in open databases \cite{masymos}.
+I created an initial version of the COMBINE archive using M2CAT~\cite{m2cat}.
+The webinterface as \href{http://m2cat.sems.uni-rostock.de/}{m2cat.sems.uni-rostock.de} searches in a graph database to retrieve links to models published in open databases~\cite{masymos}.
 The search for \texttt{Calzone} resulted in two matches, one of them representing the model in the CellML model repository.
-In addition to searching in a graph database, M2CAT is also able to retrieve the files that correspond to a simulation study from other sources, such as open model repositories, and to bundle them in combine archives using the library of the CombineArchive Toolkit \cite{cat}.
-The web interface also provides means to immediately explore the generated archive in the CombineArchiveWeb application \cite{scharm2014}.
+In addition to searching in a graph database, M2CAT is also able to retrieve the files that correspond to a simulation study from other sources, such as open model repositories, and to bundle them in combine archives using the library of the CombineArchive Toolkit~\cite{cat}.
+The web interface also provides means to immediately explore the generated archive in the CombineArchiveWeb application~\cite{scharm2014}.
 
 In case of the Calzone \emph{et.~al.} study, the files of the CellML model repository were cloned and aggregated in a new COMBINE archive.
 Additionally, the resulting archive and its files were annotated with all the meta data available from the GIT project of the CellML model repositories.
@@ -147,8 +147,41 @@ The figures produced by the SWT and COPASI were uploaded to the \texttt{result/}
 
 
 
-\paragraph{The visualisation} of the model can be encoded in a standard format
-generating sbgn compliant figure
+\begin{figure}
+\begin{center}
+\includegraphics[width=.7\textwidth]{img/Calzone2007.png}
+\end{center}
+\caption{SBGN-compliant figure of the reaction network encoded in the model document.}
+\label{fig:sbgngraph}
+\end{figure}
+\paragraph{The visualisation} of the model can be encoded in a standard format.
+
+I used SBGN-ED~\cite{sbgned} to load the SBML model, which immediately presented a layout of the reaction network encoded in the model.
+After applying built-in graph layout algorithms from VANTED~\cite{vanted} and a bit of manual layouting I obtained the network, as shown in Figure~\ref{fig:sbgngraph}.
+Due to an error in SBGN-ED, I was not able to export the figure in SBGN-ML layout, but uploaded it as GraphML~\cite{graphml}, GML\footnote{\href{http://www.fim.uni-passau.de/index.php?id=17297&L=1}{www.fim.uni-passau.de/index.php?id=17297\&L=1}}, PNG image, and PDF to the \texttt{model/sbgn} directory in the CombineArchiveWeb application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
