@@ -31,8 +31,10 @@ to demonstrate the power of the COMBINE archive approach.
 \input{tex/results}
 \input{tex/discussion}
 \input{tex/ack}
-\input{tex/appendix}
 
 \bibliography{meta/refs}
 
+  \setcounter{section}{0}%
+  \renewcommand*\thesection{\Alph{section}}%
+\input{tex/appendix}
 \end{document}
