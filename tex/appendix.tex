@@ -1,10 +1,42 @@
 \section{Appendix}
 \label{sec:appendix}
 
+\subsection{The Mainfest}
+\label{sec:manifest}
+\begin{mdframed}[style=mddefault,frametitle={The \texttt{manifest.xml} of the final COMBINE archive}]
+\begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt,fontsize=\footnotesize]{xml}
+<?xml version="1.0" encoding="UTF-8"?>
+<omexManifest xmlns="http://identifiers.org/combine.specifications/omex-manifest">
+  <content location="." format="http://identifiers.org/combine.specifications/omex" />
+  <content location="./manifest.xml" format="http://identifiers.org/combine.specifications/omex-manifest" />
+  <content location="./README.md" format="http://purl.org/NET/mediatypes/text/x-markdown"/>
+  <content location="./model/BIOMD0000000144.xml" format="http://identifiers.org/combine.specifications/sbml.level-2.version-1" />
+  <content location="./model/calzone_2007.ai" format="http://purl.org/NET/mediatypes/application/illustrator" />
+  <content location="./model/calzone_2007.png" format="http://purl.org/NET/mediatypes/image/png" />
+  <content location="./model/calzone_2007.svg" format="http://purl.org/NET/mediatypes/image/svg+xml" />
+  <content location="./model/calzone_thieffry_tyson_novak_2007.cellml" format="http://identifiers.org/combine.specifications/cellml" />
+  <content location="./model/sbgn/Calzone2007.gml" format="http://purl.org/NET/mediatypes/text/plain" />
+  <content location="./model/sbgn/Calzone2007.graphml" format="http://purl.org/NET/mediatypes/application/xml" />
+  <content location="./model/sbgn/Calzone2007.png" format="http://purl.org/NET/mediatypes/image/png" />
+  <content location="./model/sbgn/Calzone2007.pdf" format="http://purl.org/NET/mediatypes/application/pdf" />
+  <content location="./experiment/Calzone2007-simulation-all-figures.xml" format="http://identifiers.org/combine.specifications/sed-ml.level-1.version-1" />
+  <content location="./experiment/Calzone2007-simulation-figure-1B.xml" format="http://identifiers.org/combine.specifications/sed-ml.level-1.version-1" master="false"/>
+  <content location="./documentation/Calzone2007.pdf" format="http://purl.org/NET/mediatypes/application/pdf" />
+  <content location="./documentation/Calzone2007-supplementary-material.pdf" format="http://purl.org/NET/mediatypes/application/pdf" />
+  <content location="./result/Fig1B-top-webtools.png" format="http://purl.org/NET/mediatypes/image/png" />
+  <content location="./result/Fig1B-bottom-webtools.png" format="http://purl.org/NET/mediatypes/image/png" />
+  <content location="./result/Fig1B-top-COPASI.svg" format="http://purl.org/NET/mediatypes/image/svg+xml" />
+  <content location="./result/Fig1B-bottom-COPASI.svg" format="http://purl.org/NET/mediatypes/image/svg+xml" />
+  <content location="./metadata.rdf" format="http://identifiers.org/combine.specifications/omex-metadata" />
+</omexManifest>
+\end{minted}
+\end{mdframed}
+
+
 \subsection{RDF/XML meta data snippets}
 \label{sec:rdfmeta}
 \begin{mdframed}[style=mddefault,frametitle={Meta Data of the Publication \texttt{Calzone2007.pdf}}]
-\begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt]{xml}
+\begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt,fontsize=\footnotesize]{xml}
 <rdf:Description rdf:about="/documentation/Calzone2007.pdf">
 	<dcterms:description>Article published in Mol Syst Biol. 2007; 3: 131. DOI:  10.1038/msb4100171, downloaded June 11th, 2015 . It describes the models /model/calzone_thieffry_tyson_novak_2007.cellml and /model/BIOMD0000000144.xml .</dcterms:description>
 	<dcterms:creator>
