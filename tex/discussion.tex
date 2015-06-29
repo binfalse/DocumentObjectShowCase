@@ -2,12 +2,12 @@
 
 \section{Discussion}
 The typical complexity of research results bears the challenge of transferring them in a way, that others are able to reproduce it.
-Sharing your research results therefore involves a few problems.
+Sharing research results therefore involves a few problems.
 % First, you need to identify and ship all relevant files.
 % Only if your collaborators/readers have access to all the files 
 Firstly, all relevant files need to be shipped.
 Simulation studies usually consist of multiple relevant files, which are all necessary to run the experiment.
-To reproduce a study it is essential to have access to all these files.
+Thus, to reproduce a study it is essential to have access to all these files.
 Secondly, users need to know the type and meaning of these files.
 The files should be in standardized formats, so that the user has a chance (i) to grasp what is encoded inside, (ii) to understand how to use them, and (iii) to execute them in a software tool of their choice.
 Especially, if the tool used to create the files is not available (anymore).
@@ -33,7 +33,18 @@ That's reasonable, as the standard of COMBINE archives is still very young.
 We are in touch with different tool developers to fix problems and to increase tool support for COMBINE archives.
 I hope that the archive developed in this study helps tool developers to implement support for COMBINE archives.
 
+During the creation of the demo archive I also spotted some shortcomings of the corresponding standard.
+I was missing means to encode the provenance of the files in a machine readable format.
+To document, for example, that the file \texttt{/model/BIOMD0000000144.xml} was retrieved from the BioModels Database I had to add a Dublin Core description \cite{dc}:
+\begin{quote}
+\textit{``This model was downloaded from the BioModels Database Jun 11th, 2015.''}
+\end{quote}
+The information in this text is very important yet not understandable for machines.
+A standardized way for encoding such provenance information, for example using the PROV Ontology\footnote{\href{http://www.w3.org/TR/prov-o/}{www.w3.org/TR/prov-o/}}, would be a significant enhancement.
+In addition, dependency links could be included to the meta data to, for example, link the simulation description and the model, or to encode which simulation description produced a certain figure.
+Thus, there is still space for improvements.
 
+The COMBINE archive approach, however, is already a solid format for sharing reproducible models and \textit{in-silico} experiments with collaborators and public databases.
 In the future I expect to see more tools able to read and export COMBINE archives.
 It would support researchers in sharing and distributing their hard-earned scientific results.
 

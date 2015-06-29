@@ -260,5 +260,12 @@
 			"name":    "Martin Scharm"
 		}
 	}
+	],
+	"annotations":
+	[
+	{
+		"about": "/document.tex",
+		"content": "http://binfalse.de#rootdocument"
+	}
 	]
 }
