@@ -330,10 +330,20 @@ prov:used </img/webcat-screenshot-2.png>;
 
 
 
-# action
+# include example code
 
 :ideaOfShowingExampleCode a prov:Plan ;
 dc:description "i could include example code" .
+
+
+:metaDataSample a prov:Entity;
+prov:wasQuotedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/metadata.rdf>;
+.
+
+:manifest a prov:Entity;
+prov:wasQuotedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/manifest.xml>;
+.
+
 
 :inlcudeSourceExamples a prov:Activity ;
 prov:qualifiedAssociation [
@@ -341,6 +351,8 @@ a prov:Association ;
 prov:agent   :martin ;
 prov:hadPlan :ideaOfShowingExampleCode
 ] ;
+prov:used :metaDataSample;
+prov:used :manifest;
 .
 :appendix-v1 prov:wasGeneratedBy :inlcudeSourceExamples ;
 .
@@ -353,7 +365,7 @@ prov:hadPlan :ideaOfShowingExampleCode
 
 
 
-# action
+# use minted
 
 :includeCodeInNiceEnv a prov:Plan ;
 dc:description "could should be layouted nicely" .
@@ -554,6 +566,155 @@ prov:used </img/Fig1B-bottom-COPASI.pdf>;
 
 
 
+
+
+:ideaOfIncludingSbgnMap a prov:Plan ;
+dc:description "i should show the SBGN figure in the paper" .
+
+
+
+:downloadSbgnMap a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingSbgnMap
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :wget ;
+prov:hadRole :download
+];
+.
+</img/Calzone2007.png> prov:wasGeneratedBy :downloadSbgnMap ;
+pav:retrievedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/model/sbgn/Calzone2007.png>;
+.
+
+
+:includeSbgnMap a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingSbgnMap
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :meth-v4;
+prov:used </img/Calzone2007.png>;
+.
+:meth-v5 prov:wasGeneratedBy :includeSbgnMap ;
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# write discussion
+
+:ideaOfADiscussion a prov:Plan ;
+dc:description "i should discuss the demo archive and combine archives in general" .
+
+:writeDiscussion a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfADiscussion
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :discussion-v1;
+.
+:discussion-v2 prov:wasGeneratedBy :writeDiscussion ;
+.
+
+
+
+
+
+
+
+
+
+
+
+
+# write abstract
+
+:ideaOfAnAbstract a prov:Plan ;
+dc:description "need a more sophisticated abstract" .
+
+:writeAbstract a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfAnAbstract
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :document-v3;
+.
+:document-v4 prov:wasGeneratedBy :writeAbstract ;
+.
+
+
+
+
+
+
+
+
+:ideaOfIncludingSedmlSnippet a prov:Plan ;
+dc:description "demonstrate how the sedml script expects the model to be in the correct place" .
+
+:sedmlSnippet a prov:Entity;
+prov:wasQuotedFrom <https://raw.githubusercontent.com/SemsProject/CombineArchiveShowCase/2e946ce1adfd05d16350c30176e29546301603a2/experiment/Calzone2007-simulation-figure-1B.xml>;
+.
+
+:includeSedmlSnippet a prov:Activity ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :martin ;
+prov:hadPlan :ideaOfIncludingSedmlSnippet
+] ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :appendix-v1;
+prov:used :sedmlSnippet;
+.
+:appendix-v2 prov:wasGeneratedBy :includeSedmlSnippet ;
+
+.
+
+
+
+
+
+
+
+
+
+
 ######################
 # files and activities
 
@@ -573,6 +734,12 @@ prov:wasAttributedTo :stian .
 
 
 
+
+
+
+
+
+
 :evolution-v1 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
 dc:creator :martin;
@@ -582,6 +749,7 @@ prov:wasAttributedTo :martin .
 :evolution-v2 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
 prov:wasRevisionOf :evolution-v1;
+pav:previousVersion :evolution-v1;
 dc:creator :stian;
 dc:description "second version of provenance file" ;
 prov:wasAttributedTo :stian .
@@ -589,6 +757,7 @@ prov:wasAttributedTo :stian .
 :evolution-v3 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
 prov:wasRevisionOf :evolution-v2;
+pav:previousVersion :evolution-v2;
 dc:creator :martin;
 dc:description "third version of provenance file" ;
 prov:wasAttributedTo :martin .
@@ -596,9 +765,41 @@ prov:wasAttributedTo :martin .
 :evolution-v4 a prov:Entity ;
 prov:specialisationOf </.ro/evolution.ttl>;
 prov:wasRevisionOf :evolution-v3;
+pav:previousVersion :evolution-v3;
 dc:creator :stian;
 dc:description "fourth version of provenance file" ;
 prov:wasAttributedTo :stian .
+
+:evolution-v5 a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:wasRevisionOf :evolution-v4;
+pav:previousVersion :evolution-v4;
+dc:creator :martin;
+dc:description "fith version of provenance file" ;
+prov:wasAttributedTo :martin .
+
+:evolution-v6 a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:wasRevisionOf :evolution-v5;
+pav:previousVersion :evolution-v5;
+dc:creator :stian;
+dc:description "sixth version of provenance file" ;
+prov:wasAttributedTo :stian .
+
+</.ro/evolution.ttl> pav:hasVersion :evolution-v2;
+pav:hasVersion :evolution-v1;
+pav:hasVersion :evolution-v3;
+pav:hasVersion :evolution-v4;
+pav:hasVersion :evolution-v5;
+pav:hasVersion :evolution-v6;
+pav:hasCurrentVersion :evolution-v6;
+.
+
+
+
+
+
+
 
 </> a prov:Entity ;
 dc:creator :martin;
@@ -651,6 +852,7 @@ prov:wasAttributedTo :martin .
 :createbundle-script-v2 a prov:Entity ;
 prov:specialisationOf </createbundle.sh>;
 prov:wasRevisionOf :createbundle-script-v1;
+pav:previousVersion :createbundle-script-v1;
 dc:creator :martin;
 prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasAttributedTo :martin .
@@ -658,9 +860,16 @@ prov:wasAttributedTo :martin .
 :createbundle-script-v3 a prov:Entity ;
 prov:specialisationOf </createbundle.sh>;
 prov:wasRevisionOf :createbundle-script-v2;
+pav:previousVersion :createbundle-script-v2;
 dc:creator :martin;
 prov:wasGeneratedBy :setupBibtex ;
 prov:wasAttributedTo :martin .
+
+</createbundle.sh> pav:hasVersion :createbundle-script-v2;
+pav:hasVersion :createbundle-script-v1;
+pav:hasVersion :createbundle-script-v3;
+pav:hasCurrentVersion :createbundle-script-v3;
+.
 
 
 
@@ -749,6 +958,11 @@ prov:wasAttributedTo :martin .
 
 
 
+</img/Calzone2007.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
 
 
 
@@ -811,6 +1025,13 @@ prov:wasGeneratedBy :translatingDocument ;
 prov:wasAttributedTo :martin .
 
 
+
+
+
+
+
+
+
 :document-v1 a prov:Entity ;
 prov:specialisationOf </document.tex>;
 dc:creator :martin;
@@ -822,6 +1043,7 @@ prov:wasAttributedTo :martin .
 :document-v2 a prov:Entity ;
 prov:specialisationOf </document.tex>;
 prov:wasRevisionOf :document-v1;
+pav:previousVersion :document-v1;
 dc:creator :martin;
 prov:wasGeneratedBy :creatingDocStructure ;
 prov:wasAttributedTo :martin .
@@ -830,9 +1052,32 @@ prov:wasAttributedTo :martin .
 :document-v3 a prov:Entity ;
 prov:specialisationOf </document.tex>;
 prov:wasRevisionOf :document-v2;
+pav:previousVersion :document-v2;
 dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
+
+
+:document-v4 a prov:Entity ;
+prov:specialisationOf </document.tex>;
+prov:wasRevisionOf :document-v3;
+pav:previousVersion :document-v3;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+</document.tex> pav:hasVersion :document-v2;
+pav:hasVersion :document-v1;
+pav:hasVersion :document-v3;
+pav:hasVersion :document-v4;
+pav:hasCurrentVersion :document-v4;
+.
+
+
+
+
+
+
+
 
 
 :header-v1 a prov:Entity ;
@@ -842,12 +1087,28 @@ prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasGeneratedBy :startingDocument ;
 prov:wasAttributedTo :martin .
 
+</meta/header.tex> pav:hasVersion :header-v1;
+pav:hasCurrentVersion :header-v1;
+.
+
+
+
+
+
 
 :bibfile-v1 a prov:Entity ;
 prov:specialisationOf </meta/refs.bib>;
 dc:creator :martin;
 prov:wasGeneratedBy :setupBibtex ;
 prov:wasAttributedTo :martin .
+
+</tex/refs.tex> pav:hasVersion :bibfile-v1;
+pav:hasCurrentVersion :bibfile-v1;
+.
+
+
+
+
 
 
 
@@ -858,12 +1119,44 @@ dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
 
+</tex/ack.tex> pav:hasVersion :ack-v1;
+pav:hasCurrentVersion :ack-v1;
+.
+
+
+
+
+
+
+
+
+
 
 :discussion-v1 a prov:Entity ;
 prov:specialisationOf </tex/discussion.tex>;
 dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
+
+
+:discussion-v2 a prov:Entity ;
+prov:specialisationOf </tex/discussion.tex>;
+prov:wasRevisionOf :discussion-v1;
+pav:previousVersion :discussion-v1;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+</tex/discussion.tex> pav:hasVersion :discussion-v2;
+pav:hasVersion :discussion-v1;
+pav:hasCurrentVersion :discussion-v2;
+.
+
+
+
+
+
+
+
 
 
 :intro-v1 a prov:Entity ;
@@ -876,6 +1169,7 @@ prov:wasAttributedTo :martin .
 :intro-v2 a prov:Entity ;
 prov:specialisationOf </tex/intro.tex>;
 prov:wasRevisionOf :intro-v1;
+pav:previousVersion :intro-v1;
 prov:wasInfluencedBy <http://dx.doi.org/10.1186/s12859-014-0369-z>;
 prov:wasInfluencedBy <http://dx.doi.org/10.7287/peerj.preprints.792v1>;
 prov:wasInfluencedBy <http://dx.doi.org/10.7287/peerj.preprints.639v1>;
@@ -884,12 +1178,33 @@ dc:creator :martin;
 prov:wasGeneratedBy :draftingIntro ;
 prov:wasAttributedTo :martin .
 
+</tex/intro.tex> pav:hasVersion :intro-v2;
+pav:hasVersion :intro-v1;
+pav:hasCurrentVersion :intro-v2;
+.
+
+
+
+
+
+
 
 :results-v1 a prov:Entity ;
 prov:specialisationOf </tex/results.tex>;
 dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
+
+</tex/results.tex> pav:hasVersion :results-v1;
+pav:hasCurrentVersion :results-v1;
+.
+
+
+
+
+
+
+
 
 
 :meth-v1 a prov:Entity ;
@@ -903,6 +1218,7 @@ prov:wasAttributedTo :martin .
 :meth-v2 a prov:Entity ;
 prov:specialisationOf </tex/meth.tex>;
 prov:wasRevisionOf :meth-v1;
+pav:previousVersion :meth-v1;
 dc:creator :martin;
 prov:wasGeneratedBy :includeWebcatScreenshotInMethodsSection ;
 prov:wasAttributedTo :martin .
@@ -911,6 +1227,7 @@ prov:wasAttributedTo :martin .
 :meth-v3 a prov:Entity ;
 prov:specialisationOf </tex/meth.tex>;
 prov:wasRevisionOf :meth-v2;
+pav:previousVersion :meth-v2;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
@@ -918,14 +1235,55 @@ prov:wasAttributedTo :martin .
 :meth-v4 a prov:Entity ;
 prov:specialisationOf </tex/meth.tex>;
 prov:wasRevisionOf :meth-v3;
+pav:previousVersion :meth-v3;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
+
+
+:meth-v5 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v4;
+pav:previousVersion :meth-v4;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+</tex/meth.tex> pav:hasVersion :meth-v2;
+pav:hasVersion :meth-v1;
+pav:hasVersion :meth-v3;
+pav:hasVersion :meth-v4;
+pav:hasVersion :meth-v5;
+pav:hasCurrentVersion :appendix-v5;
+.
+
+
+
+
+
+
 
 
 :appendix-v1 a prov:Entity ;
 prov:specialisationOf </tex/appendix.tex>;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
+
+
+:appendix-v2 a prov:Entity ;
+prov:specialisationOf </tex/appendix.tex>;
+prov:wasRevisionOf :appendix-v1;
+pav:previousVersion :appendix-v1;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+</tex/appendix.tex> pav:hasVersion :appendix-v2;
+pav:hasVersion :appendix-v1;
+pav:hasCurrentVersion :appendix-v1;
+.
+
+
+
+
+
 
 
 
