@@ -33,7 +33,8 @@ title = {Combining computational models, semantic annotations and simulation exp
 volume = {2015}, 
 year = {2015}, 
 doi = {10.1093/database/bau130}, 
-abstract ={Model repositories such as the BioModels Database, the CellML Model Repository or JWS Online are frequently accessed to retrieve computational models of biological systems. However, their storage concepts support only restricted types of queries and not all data inside the repositories can be retrieved. In this article we present a storage concept that meets this challenge. It grounds on a graph database, reflects the models’ structure, incorporates semantic annotations and simulation descriptions and ultimately connects different types of model-related data. The connections between heterogeneous model-related data and bio-ontologies enable efficient search via biological facts and grant access to new model features. The introduced concept notably improves the access of computational models and associated simulations in a model repository. This has positive effects on tasks such as model search, retrieval, ranking, matching and filtering. Furthermore, our work for the first time enables CellML- and Systems Biology Markup Language-encoded models to be effectively maintained in one database. We show how these models can be linked via annotations and queried.Database URL: https://sems.uni-rostock.de/projects/masymos/}, 
+abstract ={Model repositories such as the BioModels Database, the CellML Model Repository or JWS Online are frequently accessed to retrieve computational models of biological systems. However, their storage concepts support only restricted types of queries and not all data inside the repositories can be retrieved. In this article we present a storage concept that meets this challenge. It grounds on a graph database, reflects the models’ structure, incorporates semantic annotations and simulation descriptions and ultimately connects different types of model-related data. The connections between heterogeneous model-related data and bio-ontologies enable efficient search via biological facts and grant access to new model features. The introduced concept notably improves the access of computational models and associated simulations in a model repository. This has positive effects on tasks such as model search, retrieval, ranking, matching and filtering. Furthermore, our work for the first time enables CellML- 
+and Systems Biology Markup Language-encoded models to be effectively maintained in one database. We show how these models can be linked via annotations and queried.Database URL: https://sems.uni-rostock.de/projects/masymos/}, 
 URL = {http://database.oxfordjournals.org/content/2015/bau130.abstract}, 
 eprint = {http://database.oxfordjournals.org/content/2015/bau130.full.pdf+html}, 
 journal = {Database} 
@@ -97,7 +98,8 @@ number = {7},
 pages = {932-938}, 
 year = {2010}, 
 doi = {10.1093/bioinformatics/btq069}, 
-abstract ={Motivation: Research in systems biology is carried out through a combination of experiments and models. Several data standards have been adopted for representing models (Systems Biology Markup Language) and various types of relevant experimental data (such as FuGE and those of the Proteomics Standards Initiative). However, until now, there has been no standard way to associate a model and its entities to the corresponding datasets, or vice versa. Such a standard would provide a means to represent computational simulation results as well as to frame experimental data in the context of a particular model. Target applications include model-driven data analysis, parameter estimation, and sharing and archiving model simulations.Results: We propose the Systems Biology Results Markup Language (SBRML), an XML-based language that associates a model with several datasets. Each dataset is represented as a series of values associated with model variables, and their corresponding parameter values. SBRML provides a flexible way of indexing the results to model parameter values, which supports both spreadsheet-like data and multidimensional data cubes. We present and discuss several examples of SBRML usage in applications such as enzyme kinetics, microarray gene expression and various types of simulation results.Availability and Implementation: The XML Schema file for SBRML is available at http://www.comp-sys-bio.org/SBRML under the Academic Free License (AFL) v3.0.Contact: pedro.mendes@manchester.ac.ukSupplementary information: Supplementary data are available at Bioinformatics online.}, 
+abstract ={Motivation: Research in systems biology is carried out through a combination of experiments and models. Several data standards have been adopted for representing models (Systems Biology Markup Language) and various types of relevant experimental data (such as FuGE and those of the Proteomics Standards Initiative). However, until now, there has been no standard way to associate a model and its entities to the corresponding datasets, or vice versa. Such a standard would provide a means to represent computational simulation results as well as to frame experimental data in the context of a particular model. Target applications include model-driven data analysis, parameter estimation, and sharing and archiving model simulations.Results: We propose the Systems Biology Results Markup Language (SBRML), an XML-based language that associates a model with several datasets. Each dataset is represented as a series of values associated with model variables, and their corresponding parameter values. SBRML 
+provides a flexible way of indexing the results to model parameter values, which supports both spreadsheet-like data and multidimensional data cubes. We present and discuss several examples of SBRML usage in applications such as enzyme kinetics, microarray gene expression and various types of simulation results.Availability and Implementation: The XML Schema file for SBRML is available at http://www.comp-sys-bio.org/SBRML under the Academic Free License (AFL) v3.0.Contact: pedro.mendes@manchester.ac.ukSupplementary information: Supplementary data are available at Bioinformatics online.}, 
 URL = {http://bioinformatics.oxfordjournals.org/content/26/7/932.abstract}, 
 eprint = {http://bioinformatics.oxfordjournals.org/content/26/7/932.full.pdf+html}, 
 journal = {Bioinformatics} 
@@ -223,9 +225,40 @@ journal = {Bioinformatics}
 }        
 
 
-
-
-
+@Article{repmicro,
+   Author="Ioannidis, J. P.  and Allison, D. B.  and Ball, C. A.  and Coulibaly, I.  and Cui, X.  and Culhane, A. C.  and Falchi, M.  and Furlanello, C.  and Game, L.  and Jurman, G.  and Mangion, J.  and Mehta, T.  and Nitzberg, M.  and Page, G. P.  and Petretto, E.  and van Noort, V. ",
+   Title="{{R}epeatability of published microarray gene expression analyses}",
+   Journal="Nat. Genet.",
+   Year="2009",
+   Volume="41",
+   Number="2",
+   Pages="149--155",
+   Month="Feb"
+}
+@Article{drugdevprob,
+   Author="Begley, C. G.  and Ellis, L. M. ",
+   Title="{{D}rug development: {R}aise standards for preclinical cancer research}",
+   Journal="Nature",
+   Year="2012",
+   Volume="483",
+   Number="7391",
+   Pages="531--533",
+   Month="Mar"
+}
+@ARTICLE{workflowobjects,
+  publisher = {Informatica},
+  author = {{\'O}scar Corcho and Daniel Garijo Verdejo and K Belhajjame and Jun Zhao and Paolo Missier and David Newman and Ra{\'u}l Palma and Sean Bechhofer and Esteban Garc{\'\i}a Cuesta and Jos{\'e} Manuel G{\'o}mez-P{\'e}rez and others},
+  title = {Workflow-centric research objects: First class citizens in scholarly discourse.},
+  abstract = {A workflow-centric research object bundles a workflow, the provenance of the results obtained by its enactment, other digital objects that are relevant for the experiment (papers, datasets, etc.), and annotations that semantically describe all these objects. In this paper, we propose a model to specify workflow-centric research objects, and show how the model can be grounded using semantic technologies and existing vocabularies, in particular the Object Reuse and Exchange (ORE) model and the Annotation Ontology (AO).We describe the life-cycle of a research object, which resembles the life-cycle of a scienti?c experiment.},
+  year = {2012},
+}
+@ARTICLE{researchobjects,
+  author = {Sean Bechhofer and David De Roure and Matthew Gamble and Carole Goble and Iain Buchan},
+  title = {Research objects: Towards exchange and reuse of digital knowledge},
+  journal = {The Future of the Web for Collaborative Science},
+  abstract = {What will researchers be publishing in the future? Whilst there is little question that the Web will be the publication platform, as scholars move away from paper towards digital content, there is a need for mechanisms that support the production of self-contained units of knowledge and facilitate the publication, sharing and reuse of such entities. In this paper we discuss the notion of research objects, semantically rich aggregations of resources, that can possess some scientific intent or support some research objective. We present a number of principles that we expect such objects and their associated services to follow.},
+  year = {2010},
+}
 
 @article{Mesirov2010,
 author = {Mesirov, Jill P.}, 

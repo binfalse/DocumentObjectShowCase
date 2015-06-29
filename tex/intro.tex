@@ -3,18 +3,26 @@
 \label{sec:intro}
 
 The steadily increasing size and complexity of models and derived data poses the challenge of sharing reproducible results~\cite{scharm2014}.
-In times when collaborations over a distance of thousands of kilometres are mundane, researchers became aware of the importance of reproducibility~\cite{Sandve2013}.
-Therefore, there is an increasing demand for means to transfer simulation studies, ensuring reproducibility. CITE ro papers
-Indeed, reproducibility is an essential challenge in systems biology~\cite{Mesirov2010}.
-In 2011 the pharmaceutical company Bayer tried to replicate published studies and failed in 64\% percent~\cite{Prinz2011}.
+Unfortunately, problems with replication and reproducibility are quite common~\cite{Prinz2011,repmicro,drugdevprob}.
+% In times when collaborations over a distance of thousands of kilometres are mundane, 
+Therefore, researchers became aware of the importance of reproducibility~\cite{Sandve2013} and
+there is an increasing demand for means to transfer simulation studies, ensuring reproducibility~\cite{workflowobjects,researchobjects,Bergmann2014}.
+% 
+% Indeed, reproducibility is an essential challenge in systems biology~\cite{Mesirov2010}.
+% The lack of reproducibility and the 
+% 
+% % In 2011 the pharmaceutical company Bayer tried to replicate published studies and failed in 64\% percent~\cite{Prinz2011}.
+% 
 Several projects and initiatives already deal with the problem of reproducibility, such as the Reproducibility Initiative\footnote{\href{http://reproducibilityinitiative.org/}{reproducibilityinitiative.org}} and FAIRDOM\footnote{\href{http://fair-dom.org/}{fair-dom.org}}.
 
 Within the past decade the Computational Modeling in Biology Network (COMBINE) developed several standard formats to encode the different parts of a simulation study, such as SBML~\cite{Hucka2003} and CellML~\cite{Cuellar2003a} to encoded biological systems, SBGN~\cite{sbgn} to encode visualisations, SED-ML~\cite{Waltemath2011} to encoded the simulation setups, NuML\footnote{\href{https://github.com/numl/numl}{github.com/numl/numl}} and SBRML~\cite{Dada2010} to encode numerical data and simulation results.
-These markup languages allow for an encoding single parts of a model in an exchangeable format.
+These markup languages allow for encoding single parts of a simulation study in an exchangeable format.
 However, a simulation study usually consists of multiple files, the very model might be decomposed into various modules.
-Transferring research results, thus, remained a challenge.
+Thus, it was still challenging to transfer reproducible research results.
+% Transferring research results was still a challenge.
 
-To close this gap, the COMBINE community developed the COMBINE archive, a single file that aggregates all the information necessary for a modelling and simulation experiment in biology~\cite{Bergmann2014}.
+To close this gap, the COMBINE community developed the COMBINE archive:
+A single file that aggregates all the information necessary for a modelling and simulation experiment in biology~\cite{Bergmann2014}.
 The skeleton of a COMBINE archive consists of a manifest and a meta data file, specified by the Open Modeling EXchange format (OMEX).
 Bundled in a zip container, simulation experiments can reproducibly encoded in COMBINE archives.
 
