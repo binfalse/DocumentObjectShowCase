@@ -1,11 +1,55 @@
 
 
 \section{Discussion}
+The typical complexity of research results bears the challenge of transferring them in a way, that others are able to reproduce it.
+Sharing your research results therefore involves a few problems.
+% First, you need to identify and ship all relevant files.
+% Only if your collaborators/readers have access to all the files 
+Firstly, all relevant files need to be shipped.
+Simulation studies usually consist of multiple relevant files, which are all necessary to run the experiment.
+To reproduce a study it is essential to have access to all these files.
+Secondly, users need to know the type and meaning of these files.
+The files should be in standardized formats, so that the user has a chance (i) to grasp what is encoded inside, (ii) to understand how to use them, and (iii) to execute them in a software tool of their choice.
+Especially, if the tool used to create the files is not available (anymore).
+Thirdly, there must be a manual on how to use the files.
+For example, the model might rely on modules and the simulation description might expect this model in at a certain location.
+Thus, if the files are not arranged properly, the study cannot be rerun.
+Fourthly, it must be clear who to consult in case of problems.
+Users need to know who is/was responsible for a certain part of the simulation study.
+Creators and contributors should be attributed appropriately.
+As these requirements are crucial yet error-prone the COMBINE archive approach gives researches a hand.
 
-why is that useful?
-what's the advantage?
-space for improvements?
+A COMBINE archive is basically a container which is able to aggregate all files that are relevant for a simulation study.
+The archive maintains a manifest listing its contents (files and their formats) and a some meta data describing the files and the archive itself.
+Tools supporting COMBINE archives are able to understand its ingredients and can, for example, run the encoded experiment just as its creator intended run it.
+Thus, users do not need to understand each of these files in detail.
+They do not even need to know that the model is decomposed, or that it is encoded in, e.g., the SBML format.
+Users just need the archive which provides all necessary information to rerun the experiment.
+
+However, tool support for COMBINE archives is still very limited.
+The experiment encoded in the developed archive is able to reproduce the figure published in the corresponding publication, see Figure~\ref{fig:sim:results}.
+However, there is currently no tool able to consume the developed archive and run the experiment.
+That's reasonable, as the standard of COMBINE archives is still very young.
+We are in touch with different tool developers to fix problems and to increase tool support for COMBINE archives.
+I hope that the archive developed in this study helps tool developers to implement support for COMBINE archives.
 
 
-outlook?
+In the future I expect to see more tools able to read and export COMBINE archives.
+It would support researchers in sharing and distributing their hard-earned scientific results.
+
+
+% 
+% As this approach is obviously very beneficial people are already convinced of it.
+% 
+% 
+% 
+% machts auch einfach. ein researcher muss nicht alle files verstehen, oder ueberhaupt wissen dass da ein model in eg. sbml encoded is. er braucht nur das archive, welches den simulationstools alle notwendigen infos liefert
+% 
+% 
+% why is that useful?
+% what's the advantage?
+% space for improvements?
+% 
+% 
+% outlook?
 
