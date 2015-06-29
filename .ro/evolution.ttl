@@ -381,11 +381,27 @@ a prov:Association ;
 prov:agent   :wget ;
 prov:hadRole :download
 ];
+prov:wasInformedBy :inlcudeSourceExamples;
 .
 </minted.sty> prov:wasGeneratedBy :downloadLatestVersionOfMinted ;
 .
 
+# include minted
 
+:includeMinted a prov:Activity ;
+prov:wasAssociatedWith:martin ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:wasInformedBy :inlcudeSourceExamples;
+prov:used :header-v1;
+.
+</minted.sty> prov:wasGeneratedBy :includeMinted ;
+.
+:header-v2 prov:wasGeneratedBy :includeMinted ;
+.
 
 
 
@@ -703,11 +719,41 @@ prov:used :appendix-v1;
 prov:used :sedmlSnippet;
 .
 :appendix-v2 prov:wasGeneratedBy :includeSedmlSnippet ;
-
 .
 
 
 
+
+
+
+
+
+
+
+
+
+:reviseDocuemt a prov:Activity ;
+prov:wasAssociatedWith :martin ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:used :meth-v5;
+prov:used :results-v1;
+prov:used :intro-v2;
+prov:used :header-v2;
+prov:used :discussion-v2;
+prov:used :document-v4;
+prov:used :evolution-v6;
+.
+:meth-v6 prov:wasGeneratedBy :reviseDocuemt .
+:results-v2 prov:wasGeneratedBy :reviseDocuemt .
+:intro-v3 prov:wasGeneratedBy :reviseDocuemt .
+:discussion-v3 prov:wasGeneratedBy :reviseDocuemt .
+:document-v5 prov:wasGeneratedBy :reviseDocuemt .
+:header-v3 prov:wasGeneratedBy :reviseDocuemt .
+:evolution-v7 prov:wasGeneratedBy :reviseDocuemt .
 
 
 
@@ -786,13 +832,22 @@ dc:creator :stian;
 dc:description "sixth version of provenance file" ;
 prov:wasAttributedTo :stian .
 
+:evolution-v7 a prov:Entity ;
+prov:specialisationOf </.ro/evolution.ttl>;
+prov:wasRevisionOf :evolution-v6;
+pav:previousVersion :evolution-v6;
+dc:creator :martin;
+dc:description "seventh version of provenance file" ;
+prov:wasAttributedTo :martin .
+
 </.ro/evolution.ttl> pav:hasVersion :evolution-v2;
 pav:hasVersion :evolution-v1;
 pav:hasVersion :evolution-v3;
 pav:hasVersion :evolution-v4;
 pav:hasVersion :evolution-v5;
 pav:hasVersion :evolution-v6;
-pav:hasCurrentVersion :evolution-v6;
+pav:hasVersion :evolution-v7;
+pav:hasCurrentVersion :evolution-v7;
 .
 
 
@@ -1065,11 +1120,20 @@ pav:previousVersion :document-v3;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:document-v5 a prov:Entity ;
+prov:specialisationOf </document.tex>;
+prov:wasRevisionOf :document-v4;
+pav:previousVersion :document-v4;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </document.tex> pav:hasVersion :document-v2;
 pav:hasVersion :document-v1;
 pav:hasVersion :document-v3;
 pav:hasVersion :document-v4;
-pav:hasCurrentVersion :document-v4;
+pav:hasVersion :document-v5;
+pav:hasCurrentVersion :document-v5;
 .
 
 
@@ -1087,8 +1151,26 @@ prov:wasGeneratedBy :initTexInfrastructure ;
 prov:wasGeneratedBy :startingDocument ;
 prov:wasAttributedTo :martin .
 
+
+:header-v2 a prov:Entity ;
+prov:specialisationOf </meta/header.tex>;
+prov:wasRevisionOf :header-v1;
+pav:previousVersion :header-v1;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
+
+:header-v3 a prov:Entity ;
+prov:specialisationOf </meta/header.tex>;
+prov:wasRevisionOf :header-v1;
+pav:previousVersion :header-v1;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </meta/header.tex> pav:hasVersion :header-v1;
-pav:hasCurrentVersion :header-v1;
+pav:hasVersion :header-v2;
+pav:hasVersion :header-v3;
+pav:hasCurrentVersion :header-v3;
 .
 
 
@@ -1146,9 +1228,18 @@ pav:previousVersion :discussion-v1;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:discussion-v3 a prov:Entity ;
+prov:specialisationOf </tex/discussion.tex>;
+prov:wasRevisionOf :discussion-v2;
+pav:previousVersion :discussion-v2;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </tex/discussion.tex> pav:hasVersion :discussion-v2;
 pav:hasVersion :discussion-v1;
-pav:hasCurrentVersion :discussion-v2;
+pav:hasVersion :discussion-v3;
+pav:hasCurrentVersion :discussion-v3;
 .
 
 
@@ -1178,9 +1269,18 @@ dc:creator :martin;
 prov:wasGeneratedBy :draftingIntro ;
 prov:wasAttributedTo :martin .
 
+
+:intro-v3 a prov:Entity ;
+prov:specialisationOf </tex/intro.tex>;
+prov:wasRevisionOf :intro-v2;
+pav:previousVersion :intro-v2;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </tex/intro.tex> pav:hasVersion :intro-v2;
 pav:hasVersion :intro-v1;
-pav:hasCurrentVersion :intro-v2;
+pav:hasVersion :intro-v3;
+pav:hasCurrentVersion :intro-v3;
 .
 
 
@@ -1195,8 +1295,18 @@ dc:creator :martin;
 prov:wasGeneratedBy :improveTexInfrastructure ;
 prov:wasAttributedTo :martin .
 
+
+
+:results-v2 a prov:Entity ;
+prov:specialisationOf </tex/results.tex>;
+prov:wasRevisionOf :results-v1;
+pav:previousVersion :results-v1;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </tex/results.tex> pav:hasVersion :results-v1;
-pav:hasCurrentVersion :results-v1;
+pav:hasVersion :results-v2;
+pav:hasCurrentVersion :results-v2;
 .
 
 
@@ -1247,12 +1357,21 @@ pav:previousVersion :meth-v4;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:meth-v6 a prov:Entity ;
+prov:specialisationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v5;
+pav:previousVersion :meth-v5;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </tex/meth.tex> pav:hasVersion :meth-v2;
 pav:hasVersion :meth-v1;
 pav:hasVersion :meth-v3;
 pav:hasVersion :meth-v4;
 pav:hasVersion :meth-v5;
-pav:hasCurrentVersion :appendix-v5;
+pav:hasVersion :meth-v6;
+pav:hasCurrentVersion :appendix-v6;
 .
 
 
