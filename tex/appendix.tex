@@ -33,7 +33,7 @@
 \end{mdframed}
 
 
-\subsection{RDF/XML meta data snippets}
+\subsection{RDF/XML meta data snippet}
 \label{sec:rdfmeta}
 \begin{mdframed}[style=mddefault,frametitle={Meta Data of the Publication \texttt{Calzone2007.pdf}}]
 \begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt,fontsize=\footnotesize]{xml}
@@ -108,5 +108,20 @@
 		<dcterms:W3CDTF>2014-03-26T11:22:15Z</dcterms:W3CDTF>
 	</dcterms:modified>
 </rdf:Description>
+\end{minted}
+\end{mdframed}
+
+\subsection{Snippet of a Simulation Description}
+\label{sec:simdescr}
+\begin{mdframed}[style=mddefault,frametitle={Snippet of \texttt{experiment/Calzone2007-simulation-figure-1B.xml} referring to the model \texttt{/model/BIOMD0000000144.xml}}]
+\begin{minted}[linenos,breaklines=true,numbersep=5pt,tabsize=2,xleftmargin=-7pt,fontsize=\footnotesize]{xml}
+<?xml version="1.0" encoding="utf-8"?>
+<sedML level="1" version="1" xmlns="http://sed-ml.org/">
+  [...]
+  <listOfModels>
+    <model id="model1" language="urn:sedml:language:sbml" source="../model/BIOMD0000000144.xml" />
+  </listOfModels>
+  [...]
+</sedML>
 \end{minted}
 \end{mdframed}
