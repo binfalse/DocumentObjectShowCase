@@ -68,6 +68,18 @@ sems:sems prov:actedOnBehalfOf sems:university-of-rostock .
 
 
 
+sems:university-of-heidelberg a prov:Agent , prov:Organization ;
+foaf:name "Heidelberg University" ;
+foaf:homepage <http://www.uni-heidelberg.de/> .
+
+:frank a prov:Agent , prov:Person , foaf:Person ;
+foaf:givenName "Frank" ;
+foaf:lastName "Bergmann" ;
+foaf:mbox <mailto:fbergman@caltech.edu> ;
+foaf:homepage <http://frank-fbergmann.blogspot.com/> .
+
+:martin rel:collaboratesWith :frank .
+:frank prov:actedOnBehalfOf sems:university-of-heidelberg .
 
 
 # writing
@@ -761,6 +773,79 @@ prov:used :evolution-v6;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# add screenshot
+
+
+
+:takeScreenshotOfSwt a prov:Activity ;
+prov:wasAssociatedWith :martin ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :screenshottool ;
+prov:hadRole :createScreenshot
+];
+prov:startedAtTime "2015-07-08T13:58:09Z"^^xsd:dateTime ;
+prov:endedAtTime   "2015-07-08T13:58:09Z"^^xsd:dateTime ;
+.
+
+
+
+:shrinkSWTScreenshot a prov:Activity ;
+prov:wasAssociatedWith :martin ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :gimp ;
+prov:hadRole :imageProcessing
+];
+prov:used </img/swt-reproduced.png>;
+prov:startedAtTime "2015-07-08T13:58:09Z"^^xsd:dateTime ;
+prov:endedAtTime   "2015-07-08T13:59:54Z"^^xsd:dateTime ;
+.
+
+
+
+:mailFromFrank a prov:Entity, "email message"^^xsd:string;
+prov:wasAssociatedWith :frank;
+.
+
+
+:includeSwtScreenshotInResults prov:used </img/swt-reproduced-cropped.png>.
+:includeSwtScreenshotInResults prov:used :results-v2.
+:includeSwtScreenshotInResults a prov:Activity ;
+prov:wasAssociatedWith :martin ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :editor ;
+prov:hadRole :createTexDocument
+];
+prov:wasStartedBy :mailFromFrank;
+.
+:results-v3 prov:wasGeneratedBy :includeSwtScreenshotInResults .
+
+
+
+
+
+
+
+
+
+
+
 ######################
 # files and activities
 
@@ -957,6 +1042,21 @@ prov:wasDerivedFrom </img/webcat-screenshot-1.png>;
 prov:wasDerivedFrom </img/webcat-screenshot-2.png>;
 prov:wasAttributedTo :martin .
 
+
+
+
+
+
+</img/swt-reproduced.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :takeScreenshotOfSwt;
+prov:wasAttributedTo :martin .
+
+</img/swt-reproduced-cropped.png> a prov:Entity ;
+dc:creator :martin;
+prov:wasGeneratedBy :shrinkSWTScreenshot ;
+prov:wasDerivedFrom </img/swt-reproduced.png>;
+prov:wasAttributedTo :martin .
 
 
 
@@ -1304,9 +1404,19 @@ pav:previousVersion :results-v1;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+
+:results-v3 a prov:Entity ;
+prov:specialisationOf </tex/results.tex>;
+prov:wasRevisionOf :results-v2;
+pav:previousVersion :results-v2;
+dc:creator :martin;
+prov:wasAttributedTo :martin .
+
 </tex/results.tex> pav:hasVersion :results-v1;
 pav:hasVersion :results-v2;
-pav:hasCurrentVersion :results-v2;
+pav:hasVersion :results-v3;
+pav:hasCurrentVersion :results-v3;
 .
 
 

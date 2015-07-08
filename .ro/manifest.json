@@ -73,6 +73,24 @@
 		"createdOn": "2015-06-19T09:47:48+01:00"
 	},
 	{
+		"uri":      "/img/swt-reproduced.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-07-08T13:58:09+01:00"
+	},
+	{
+		"uri":      "/img/swt-reproduced-cropped.png",
+		"mediatype": "image/png",
+		"createdBy":
+		{
+			"name":    "Martin Scharm"
+		},
+		"createdOn": "2015-07-08T13:59:54+01:00"
+	},
+	{
 		"uri":      "/meta/refs.bib",
 		"mediatype": "text/plain",
 		"createdBy":
