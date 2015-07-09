@@ -5,7 +5,6 @@ ro-bundle.zip
 *.out
 *.aux
 *.log
-*.pdf
 *.bbl
 *.blg
 _minted-document/
