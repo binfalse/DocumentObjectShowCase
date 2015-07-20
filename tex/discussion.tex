@@ -1,26 +1,29 @@
 
 
 \section{Discussion}
-The typical complexity of research results bears the challenge of transferring them in a way, that others are able to reproduce it.
-Sharing research results therefore involves a few problems.
+The complexity of research results poses a  challenge to successful  transfer --  in a way  that others are able to reproduce.
+More specifically, the following problems occur when sharing research results.
 % First, you need to identify and ship all relevant files.
-% Only if your collaborators/readers have access to all the files 
-Firstly, all relevant files need to be shipped.
+% Only if your collaborators/readers have access to all the files
+\comment{Dagmar}{I suggest to put problems into paragraphs}
+
+\paragraph{All relevant files need to be shipped.}
 Simulation studies usually consist of multiple relevant files, which are all necessary to run the experiment.
 Thus, to reproduce a study it is essential to have access to all these files.
-Secondly, users need to know the type and meaning of these files.
-The files should be in standardized formats, so that the user has a chance (i) to grasp what is encoded inside, (ii) to understand how to use them, and (iii) to execute them in a software tool of their choice.
+\paragraph{Users need to know the type and meaning of these files.}
+The files should be encoded in standardized formats, so that users get a chance (i) to grasp what is encoded inside, (ii) to understand how to use them, and (iii) to execute them in a software tool of their choice.
 Especially, if the tool used to create the files is not available (anymore).
-Thirdly, there must be a manual on how to use the files.
+\paragraph{There must be a manual on how to use the files.}
 For example, the model might rely on modules and the simulation description might expect this model in at a certain location, cmp. \ref{sec:simdescr}.
 Thus, if the files are not arranged properly, the study cannot be rerun.
-Fourthly, it must be clear who to consult in case of problems.
+\paragraph{It must be clear whom to consult in case of problems.}
 Users need to know who is/was responsible for a certain part of the simulation study.
 Creators and contributors should be attributed appropriately.
+\paragraph{}
 As these requirements are crucial yet error-prone the COMBINE archive approach gives researches a hand.
 
-A COMBINE archive is basically a container which is able to aggregate all files that are relevant for a simulation study.
-The archive maintains a manifest listing its contents (files and their formats) and a some meta data describing the files and the archive itself.
+A COMBINE archive is basically a container that aggregates all necessary files for a simulation study.
+The archive maintains a manifest listing its contents (files and their formats) and some meta data describing the files and the archive itself.
 Tools supporting COMBINE archives are able to understand its ingredients and can, for example, run the encoded experiment just as its creator intended run it.
 Thus, users do not need to understand each of these files in detail.
 They do not even need to know that the model is decomposed, or that it is encoded in, e.g., the SBML format.
