@@ -83,8 +83,8 @@ To organize the files I developed a file structure in the COMBINE archive contai
  \item \texttt{result/}: files that result from running the experiment
 \end{itemize}
 
-Using the CombineArchiveWeb application it was very easy to get rid of the unrelated \texttt{.DS\_Store} file.
-I also used the web interface to moved all other files into the model directory, as they all encoded the model.
+The CombineArchiveWeb application made it very easy to get rid of the unrelated \texttt{.DS\_Store} file. 
+It also helped with moving all other files into the model directory, as they all encoded the model. 
 Other directories are to be filled in the next sections.
 
 \subsubsection{Retrieving Data and Information from other Services}
@@ -94,16 +94,16 @@ I was able to retrieve a journal publication and a model encoded in SBML.
 \paragraph{The article} is usually the central object of a research study. As I said earlier, Calzone \emph{et.~al.} published their findings in Molecular Systems Biology. So I went to the corresponding website\footnote{\href{http://msb.embopress.org/content/3/1/131}{msb.embopress.org/content/3/1/131}} and downloaded the article and supplementary information.
 As both describe the simulation experiment, I uploaded the files to the \texttt{documentation/} directory in the CombineArchiveWeb application.
 The web interface decently added meta data listing me as the creator of the file, which, unfortunately, is in this case incorrect.
-Thus, I modified the entries to attribute the real creators and to state when and where the files where downloaded.
+Thus, I modified the entries to attribute the real creators and to state when and where the files were downloaded.
 Additionally, I added modification dates to the meta data of these files by copying them from the website of the article and the meta data of the PDF files.
 The CombineArchiveWeb application provides a nice interface to modify the meta data without any necessity of touching or knowing about XML or RDF.
 %knowledge about XML or RDF.
 However, in the background it nevertheless created an RDF/XML tree to describe the article in a machine readable format, see section~\ref{sec:rdfmeta}.
-This XML tree was then added ass a subtree to the meta data file of the archive.
+This XML tree was then added as a subtree to the meta data file of the archive.
 
 
 \paragraph{The model} encoded in SBML format was already available from the BioModels Database, so I went there to retrieve the file \texttt{BIOMD0000000144.xml}\footnote{\href{http://www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/download?mid=BIOMD0000000144}} (SBML level 2 version 1).
-The model file was then uploaded to the \texttt{model/} directory in the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, according to the BioModels Database website\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} and as stated in the model document.
+I then uploaded the SBML file to the \texttt{model/} directory in the CombineArchiveWeb application and the meta data was modified to attribute the correct authors, curators, and contributors, according to the BioModels Database website\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}} and as stated in the model document.
 
 
 \subsubsection{Generating more Data}
@@ -115,6 +115,7 @@ Thus, I generated more data myself.
 It defines the environment and the output of the \textit{in silico} execution.
 Creating an initial simulation description was easy using the \sedml Web Tools\footnote{\href{http://bqfbergmann.dyndns.org/SED-ML_Web_Tools}{bqfbergmann.dyndns.org/SED-ML\_Web\_Tools}} (SWT).
 I just needed to upload the model and to tick some boxes and the SWT created an initial \sedml script which runs a time course simulation on the model.
+\comment{Dagmar}{I guess ``tick some boxes'' demands some further details in order to be reproducible...}
 In the end it produces a graph for the concentration of every species and the value of every parameter and combines everything in a large table.
 So I ended up with 66 plots and a huge table.
 I compared the graphs with those shown in the paper and sensed a match.
