@@ -7,7 +7,7 @@ The latest version of the archive can be found at GitHub\footnote{\href{https://
 At the time of writing this report\footnote{latest git commit: 2e946ce1adfd05d16350c30176e29546301603a2 -- 2015-06-11}, the archive consists of 25 files organized in four directories (cmp. Section~\ref{sec:extendingarchive}), including the \texttt{manifest.xml} and \texttt{metadata.rdf} (the skeleton of the archive, see Section~\ref{sec:intro}) and a \texttt{README.md} file for the GitHub repository.
 The manifest listing all ingredients of the COMBINE archive is attached in Section~\ref{sec:manifest}.
 
-The archive basically consists of 4 modules: (i) the publication stored in the \texttt{documentation/} directory, (ii) the model of the biological system encoded in standardised formats stored in the \texttt{model/} directory, (iii) the simulation description encoded in \sedml stored in the \texttt{experiment/} directory, (iv) the simulation results in form of graphs stored in the \texttt{result/} directory.
+The archive basically consists of 4 modules: (i) the publication stored in the \texttt{documentation/} directory, (ii) the model of the biological system encoded in standardised formats stored in the \texttt{model/} directory, (iii) the simulation description encoded in \sedml format and stored in the \texttt{experiment/} directory, (iv) the simulation results in form of graphs stored in the \texttt{result/} directory.
 The files in these directories were either retrieved from other websites (publication, SBML model, CellML model) or generated especially for this archive (\sedml scripts, simulation results, SBGN map).
 The goal of this archive is to encode a reproducible simulation study.
 Figure~\ref{fig:sim:results} has shown that the developed study is able to reproduce graphs shown in the corresponding publication.
@@ -31,7 +31,7 @@ In other words, open the following URL in your browser:
 % \end{center}
 
 The SWT will immediately present you the results as shown in Figure~\ref{fig:swt-repro}.
-
+\comment{Dagmar}{Does not sound too magic right now - maybe you can describe what is happening behind the scences - and what is the advantage over state-of-the-art handling of CAs?}
 The SWT API also allows you to run the simulation encoded in the demo archive without visiting a website.
 You can simply send the archive using an HTTP POST request and obtain the simulation results, which are again encoded in a COMBINE archive:
 
