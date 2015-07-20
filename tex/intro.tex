@@ -13,19 +13,20 @@ there is an increasing demand for means to transfer simulation studies, ensuring
 % 
 % % In 2011 the pharmaceutical company Bayer tried to replicate published studies and failed in 64\% percent~\cite{Prinz2011}.
 % 
-Several projects and initiatives already deal with the problem of reproducibility, such as the Reproducibility Initiative\footnote{\href{http://reproducibilityinitiative.org/}{reproducibilityinitiative.org}} and FAIRDOM\footnote{\href{http://fair-dom.org/}{fair-dom.org}}.
+Several projects and initiatives already deal with the problem of reproducibility, such as the Reproducibility Initiative\footnote{\href{http://reproducibilityinitiative.org/}{reproducibilityinitiative.org}} or FAIRDOM\footnote{\href{http://fair-dom.org/}{fair-dom.org}}.
 
-Within the past decade the Computational Modeling in Biology Network (COMBINE) developed several standard formats to encode the different parts of a simulation study, such as SBML~\cite{Hucka2003} and CellML~\cite{Cuellar2003a} to encoded biological systems, SBGN~\cite{sbgn} to encode visualisations, \sedml~\cite{Waltemath2011} to encoded the simulation setups, NuML\footnote{\href{https://github.com/numl/numl}{github.com/numl/numl}} and SBRML~\cite{Dada2010} to encode numerical data and simulation results.
+Within the past decade the Computational Modeling in Biology Network (COMBINE) developed several standard formats to encode the different aspects of a simulation study: SBML~\cite{Hucka2003} and CellML~\cite{Cuellar2003a} to encode the biological networks; SBGN~\cite{sbgn} to encode their visual representation; \sedml~\cite{Waltemath2011} to encode the simulation recipes; NuML\footnote{\href{https://github.com/numl/numl}{github.com/numl/numl}} and SBRML~\cite{Dada2010} to encode numerical data and simulation results.
 These markup languages allow for encoding single parts of a simulation study in an exchangeable format.
-However, a simulation study usually consists of multiple files, the very model might be decomposed into various modules.
+However, a simulation study may consist of multiple files, and the very model might have been decomposed into various modules.
+\comment{Dagmar}{It would be nice to have a concrete example here, eg. the simulation study by XYZ has the following files (and describe in detail) - this would be motivating the work a lot better than simply the following sentence.}
 Thus, it was still challenging to transfer reproducible research results.
 % Transferring research results was still a challenge.
 
 To close this gap, the COMBINE community developed the COMBINE archive:
 A single file that aggregates all the information necessary for a modelling and simulation experiment in biology~\cite{Bergmann2014}.
 The skeleton of a COMBINE archive consists of a manifest and a meta data file, specified by the Open Modeling EXchange format (OMEX).
-Bundled in a zip container, simulation experiments can reproducibly encoded in COMBINE archives.
+When bundled in a COMBINE archive, essentially a .zip container, simulation experiments can be encoded in a reproducible manner. % in COMBINE archives.
 
-To demonstrate the capabilities of a COMBINE archive I created a demo archive, which is available from our GitHub project\footnote{\href{https://github.com/SemsProject/CombineArchiveShowCase}{github.com/SemsProject/CombineArchiveShowCase}}.
+To demonstrate the capabilities of a COMBINE archive I created a demo archive and made it available from our GitHub project\footnote{\href{https://github.com/SemsProject/CombineArchiveShowCase}{github.com/SemsProject/CombineArchiveShowCase}}. 
 In the following I describe what I did to build that archive.
-
+\comment{Dagmar}{Would it be useful to name and shame provenance here?}
