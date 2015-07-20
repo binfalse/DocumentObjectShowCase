@@ -1,8 +1,8 @@
 
 \section{Methods}
 
-The development of the fully featured COMBINE archive can be divided into three major parts.
-I first decided for a simulation study to encode in an archive, then I created an initial archive which was finally enriched with information I found on the internet and data that I generated on my own.
+I devide the process of developing a fully featured COMBINE archive into three major parts.
+First I decide for a simulation study to encode in an archive; then I create the initial archive; third I enrich the archive with information I found on the internet and with data that I generated on my own.
 These steps are described in the following.
 
 \subsection{Deciding for a Simulation Study}
@@ -12,11 +12,14 @@ I developed 3 criteria to decide for a simulation study:
 \paragraph{Criteria 1: Open Access.}
 As I want to share the demo archive openly, I need to find an experiment that offers as much open data as possible.
 Obviously and unfortunately, the publication, which is an essential document for the documentation of experiments, is the bottleneck.
-Therefore, I have to find a simulation experiment which was published using an open access license.
+\comment{Dagmar}{I would argue that the actual bottleneck may be the data itself. However, it may not be necessary for the archive -- depending on whether you want it to contain full provenance, in which case you'd also need to know where all the model parameters come from etc... and then the data become a much larger bottleneck than the publication, I think.} 
+\comment{Dagmar}{Also, it would be nice to link to a  study on percentage of open access publication here, if you find one.}
+  Therefore, I have to find a simulation experiment which was published using an open access license.
+
 
 \paragraph{Criteria 2: Much data already available in standard formats.}
-As I do not want to encoded the model myself, I only consider studies which are already available as SBML and CellML models.
-Ideally, these models are already curated, which increases my trust in the encoding.
+As I do not want to encode the model myself, I will only consider studies which are already available as SBML and CellML models.
+Ideally, these models are already curated, which increases my trust in the encoding. 
 
 \paragraph{Criteria 3: I have ideally already dealt with that publication.}
 As I will need to work with the study I need to understand it.
@@ -25,13 +28,15 @@ However, this is just a soft criteria to decrease my workload.
 
 
 \paragraph{Searching for a matching study.}
+\comment{Dagmar}{I suggest making this paragraph a section - Otherwise people may get confused due to > 3 paragraphs from three criteria...}
 Searching for a study was harder than I thought.
-I failed to encoded my search criteria in a format consumable by the search engines of current databases.
+I failed to encode my search criteria in a format consumable by the search engines of current databases.
 I ended up asking a common search engine to look for names of open access journals at the websites of the databases and eventually \texttt{site:models.cellml.org "Molecular Systems Biology"}\footnote{\href{https://duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}{duckduckgo.com/?q=site\%3Amodels.cellml.org+\%22Molecular+Systems+Biology\%22}} resulted in a model that is available from the CellML model repository (Calzone, Thieffry, Tyson, Novak, 2007\footnote{\href{http://models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}{models.cellml.org/exposure/1a3f36d015121d5596565fe7d9afb332}})~\cite{cellmlrepo} and from the BioModels Database (BIOMD0000000144\footnote{\href{http://www.ebi.ac.uk/biomodels-main/BIOMD0000000144}{www.ebi.ac.uk/biomodels-main/BIOMD0000000144}})~\cite{biomodels}.
 
 
 \paragraph{The final study.}
 The study I chose was published by Calzone \emph{et.~al.} in Molecular Systems Biology. They propose a dynamical model for the molecular events underlying rapid, synchronous, syncytial nuclear division cycles in \textit{Drosophila} embryos~\cite{Calzone2007}.
+\comment{Dagmar}{I would include a bit more information on the study here, or a sketch of the SBGN map (which presumably exists), to keep people's attention.}
 In an earlier study dealing with the cell cycle I already touched that publication, so it was the perfect study for the demo archive project.
 
 
@@ -41,16 +46,18 @@ In an earlier study dealing with the cell cycle I already touched that publicati
 \begin{center}
 \includegraphics[width=.8\textwidth]{img/webcat-screenshot-combined.png}
 \end{center}
-\caption{\textbf{The CombineArchiveWeb application showing the archive as it was exported from M2CAT.} The files were cloned from the CellML model repository and immediately annotated with meta data. Thus, it is clear that I am not the creator of \textit{calzone\_2007.png}, instead it lists Catherine Lloyd as the creators and tells you when it was developed.}
+\caption{\textbf{The CombineArchiveWeb application showing the archive as it was exported from M2CAT.} The files were cloned from the CellML model repository and immediately annotated with meta data. Thus, information such that Catherine Lloyd is the creator of the model file or the creation date are not lost.
+  %it is clear that I am not the creator of \textit{calzone\_2007.png}, instead it lists Catherine Lloyd as the creators and tells you when it was developed.
+}
 \label{fig:screen:webcat}
 \end{figure}
 
 \subsection{Creating an initial COMBINE archive}
 
 I created an initial version of the COMBINE archive using M2CAT~\cite{m2cat}.
-The webinterface at \href{http://m2cat.sems.uni-rostock.de/}{m2cat.sems.uni-rostock.de} searches in a graph database to retrieve links to models published in open databases~\cite{masymos}.
+The web interface at \href{http://m2cat.sems.uni-rostock.de/}{m2cat.sems.uni-rostock.de} searches in MASYMOS, a graph database to retrieve links to models published in open databases~\cite{masymos}.
 The search for \texttt{Calzone} resulted in two matches, one of them representing the model in the CellML model repository.
-In addition to searching in a graph database, M2CAT is also able to retrieve further the files that correspond to a simulation study.
+In addition to searching in a graph database, M2CAT retrieves files that correspond to a simulation study.
 For this it includes other sources, such as open model repositories, and bundles them in COMBINE archives using the library of the CombineArchive Toolkit~\cite{cat}.
 Moreover, the web interface provides a link to conveniently explore the generated archive in the CombineArchiveWeb application~\cite{scharm2014}.
 
