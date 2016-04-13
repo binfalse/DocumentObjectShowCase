@@ -846,6 +846,44 @@ prov:wasStartedBy :mailFromFrank;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# give feedback
+
+
+
+:giveFeedback a prov:Activity ;
+prov:wasAssociatedWith :dagmar ;
+prov:qualifiedAssociation [
+a prov:Association ;
+prov:agent   :emacs ;
+prov:hadRole :createTexDocument
+];
+prov:used :header-v3;
+prov:used :intro-v3;
+prov:used :meth-v6;
+prov:used :results-v3;
+prov:used :discussion-v3;
+.
+
+
+
+
+
+
+
 ######################
 # files and activities
 
@@ -1262,15 +1300,25 @@ prov:wasAttributedTo :martin .
 
 :header-v3 a prov:Entity ;
 prov:specializationOf </meta/header.tex>;
-prov:wasRevisionOf :header-v1;
-pav:previousVersion :header-v1;
+prov:wasRevisionOf :header-v2;
+pav:previousVersion :header-v2;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
+
+
+:header-v4 a prov:Entity ;
+prov:specializationOf </meta/header.tex>;
+prov:wasRevisionOf :header-v3;
+pav:previousVersion :header-v3;
+dc:creator :dagmar;
+prov:wasAttributedTo :dagmar;
+prov:wasGeneratedBy :giveFeedback.
 
 </meta/header.tex> pav:hasVersion :header-v1;
 pav:hasVersion :header-v2;
 pav:hasVersion :header-v3;
-pav:hasCurrentVersion :header-v3;
+pav:hasVersion :header-v4;
+pav:hasCurrentVersion :header-v4;
 .
 
 
@@ -1336,10 +1384,20 @@ pav:previousVersion :discussion-v2;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:discussion-v4 a prov:Entity ;
+prov:specializationOf </tex/discussion.tex>;
+prov:wasRevisionOf :discussion-v3;
+pav:previousVersion :discussion-v3;
+dc:creator :dagmar;
+prov:wasAttributedTo :dagmar;
+prov:wasGeneratedBy :giveFeedback .
+
 </tex/discussion.tex> pav:hasVersion :discussion-v2;
 pav:hasVersion :discussion-v1;
 pav:hasVersion :discussion-v3;
-pav:hasCurrentVersion :discussion-v3;
+pav:hasVersion :discussion-v4;
+pav:hasCurrentVersion :discussion-v4;
 .
 
 
@@ -1377,10 +1435,21 @@ pav:previousVersion :intro-v2;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:intro-v4 a prov:Entity ;
+prov:specializationOf </tex/intro.tex>;
+prov:wasRevisionOf :intro-v3;
+pav:previousVersion :intro-v3;
+dc:creator :dagmar;
+prov:wasAttributedTo :dagmar;
+prov:wasGeneratedBy :giveFeedback .
+
+
 </tex/intro.tex> pav:hasVersion :intro-v2;
 pav:hasVersion :intro-v1;
 pav:hasVersion :intro-v3;
-pav:hasCurrentVersion :intro-v3;
+pav:hasVersion :intro-v4;
+pav:hasCurrentVersion :intro-v4;
 .
 
 
@@ -1413,10 +1482,21 @@ pav:previousVersion :results-v2;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+
+:results-v4 a prov:Entity ;
+prov:specializationOf </tex/results.tex>;
+prov:wasRevisionOf :results-v3;
+pav:previousVersion :results-v3;
+dc:creator :dagmar;
+prov:wasAttributedTo :dagmar;
+prov:wasGeneratedBy :giveFeedback .
+
 </tex/results.tex> pav:hasVersion :results-v1;
 pav:hasVersion :results-v2;
 pav:hasVersion :results-v3;
-pav:hasCurrentVersion :results-v3;
+pav:hasVersion :results-v4;
+pav:hasCurrentVersion :results-v4;
 .
 
 
@@ -1475,13 +1555,23 @@ pav:previousVersion :meth-v5;
 dc:creator :martin;
 prov:wasAttributedTo :martin .
 
+
+:meth-v7 a prov:Entity ;
+prov:specializationOf </tex/meth.tex>;
+prov:wasRevisionOf :meth-v6;
+pav:previousVersion :meth-v6;
+dc:creator :dagmar;
+prov:wasAttributedTo :dagmar;
+prov:wasGeneratedBy :giveFeedback .
+
 </tex/meth.tex> pav:hasVersion :meth-v2;
 pav:hasVersion :meth-v1;
 pav:hasVersion :meth-v3;
 pav:hasVersion :meth-v4;
 pav:hasVersion :meth-v5;
 pav:hasVersion :meth-v6;
-pav:hasCurrentVersion :appendix-v6;
+pav:hasVersion :meth-v7;
+pav:hasCurrentVersion :meth-v7;
 .
 
 
@@ -1592,10 +1682,20 @@ pav:version "2.8.14";
 
 :createTexDocument a prov:Role .
 
+
+
 :editor a prov:SoftwareAgent;
 foaf:name "Kile"^^xsd:string;
 pav:version "2.1.3";
 .
+
+
+:emacs a prov:SoftwareAgent;
+foaf:name "Emacs"^^xsd:string;
+pav:version "24.4.1";
+.
+
+
 
 
 
@@ -1635,5 +1735,8 @@ pav:version "ImageMagick 6.8.9-9 Q16 x86_64 2015-01-05";
 foaf:name "rsvg-convert"^^xsd:string;
 pav:version "2.40.9";
 .
+
+
+
 
 
